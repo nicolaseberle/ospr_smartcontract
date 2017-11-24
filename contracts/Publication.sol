@@ -61,7 +61,7 @@ contract Publication {
         if (sender.voted ) return;
         sender.voted = true;
         sender.vote = 1;
-        validation.validatedVoteCount += sender.weight;
+        validation.validatedVoteCount += 1;
         
     }
     
@@ -70,7 +70,7 @@ contract Publication {
         if (sender.voted) return;
         sender.voted = true;
         sender.vote = 0;
-        validation.rejectedVoteCount += sender.weight;
+        validation.rejectedVoteCount += 1;
     }
     function getCreationDate() public constant returns(uint){
         return creationDate;

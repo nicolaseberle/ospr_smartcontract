@@ -1,0 +1,25 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/home/neberle/Documents/PillnCase/workspace/node-v7.2.0-linux-x64/bin/node',
+1 verbose cli   '/home/neberle/Documents/PillnCase/workspace/node-v7.2.0-linux-x64/bin/npm',
+1 verbose cli   'run',
+1 verbose cli   'dev' ]
+2 info using npm@3.10.9
+3 info using node@v7.2.0
+4 warn invalid config proxy=""
+5 warn invalid config Must be a full url with 'http://'
+6 verbose config Skipping project config: /home/neberle/.npmrc. (matches userconfig)
+7 verbose stack Error: ENOENT: no such file or directory, open '/home/neberle/package.json'
+8 verbose cwd /home/neberle/workspace/exemple_git/ospr_smartcontract
+9 error Linux 4.4.0-45-generic
+10 error argv "/home/neberle/Documents/PillnCase/workspace/node-v7.2.0-linux-x64/bin/node" "/home/neberle/Documents/PillnCase/workspace/node-v7.2.0-linux-x64/bin/npm" "run" "dev"
+11 error node v7.2.0
+12 error npm  v3.10.9
+13 error path /home/neberle/package.json
+14 error code ENOENT
+15 error errno -2
+16 error syscall open
+17 error enoent ENOENT: no such file or directory, open '/home/neberle/package.json'
+18 error enoent ENOENT: no such file or directory, open '/home/neberle/package.json'
+18 error enoent This is most likely not a problem with npm itself
+18 error enoent and is related to npm not being able to find a file.
+19 verbose exit [ -2, true ]

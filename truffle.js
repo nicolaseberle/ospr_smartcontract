@@ -3,9 +3,7 @@ module.exports = {
     development: {
       host: "localhost",
       port: 8545,
-      network_id: "*",
-      from:"0x627306090abab3a6e1400e9345bc60c78a8bef57"
-	
+      network_id: "*"	
     },
     staging: {
       host: "localhost",
