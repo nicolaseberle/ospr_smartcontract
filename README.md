@@ -4,8 +4,9 @@
 ## Installation
 
 ### Pre-requis
--go
--git
+
+go
+git
 
 
 ### Tendermint
