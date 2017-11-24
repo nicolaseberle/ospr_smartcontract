@@ -3,10 +3,39 @@
 
 ## Installation
 
+### Pre-requis
+
+-go
+-git
+
+//TO DO list of dependencies 
+
+### Tendermint
+Ethermint relies on the [Tendermint](https://github.com/tendermint/tendermint) executable to provide the networking and consensus engines.
+
+```bash
+go get -u -d github.com/tendermint/tendermint
+
+cd $GOPATH/src/github.com/tendermint/tendermint
+
+make install
+```
+This will download all the necessary dependencies and install tendermint in your $PATH.
+
+### OSPR_smartcontract sources
+
+Create your own working directory :
+
 ```bash
 mkdir rep_travail
 cd rep_travail
 ```
+Then, download the github repository [OSPR_smartcontract](https://github.com/nicolaseberle/ospr_smartcontract) 
+
+```bash
+git clone https://github.com/nicolaseberle/ospr_smartcontract.git
+```
+
 
 ## RUN
 ### Initialisation of ethermint and tendermint
@@ -33,6 +62,10 @@ If tendermint exists, you have to clean the database and the logfile
 ```bash
 tendermint unsafe_reset_all
 ```
+keystore and genesis.json are an example... change the public and private keys if you want to deploy it... 
+
+
+---
 
 ## Running
 In the first shell, launch ethermint:
@@ -54,6 +87,8 @@ In a third shell, launch the lite client:
 ```bash
 npm run dev
 ```
+---
+
 ## Troubles ?
 
 Check firstly your firewall
