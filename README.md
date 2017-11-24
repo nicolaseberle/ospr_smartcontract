@@ -62,6 +62,9 @@ If tendermint exists, you have to clean the database and the logfile
 ```bash
 tendermint unsafe_reset_all
 ```
+keystore and genesis.json are an example... change the public and private keys if you want to deploy it... 
+
+
 ---
 
 ## Running
