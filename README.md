@@ -87,10 +87,12 @@ In a second shell, launch tendermint
 ```bash
 tendermint  --home ~/.ethermint_ospr/tendermint node
 ```
-In a third shell, launch the lite client:
+In a third shell, launch the truffle console to exec smart contract
 
 ```bash
-npm run dev
+truffle compile
+truffle migrate
+truffle console
 ```
 ---
 
