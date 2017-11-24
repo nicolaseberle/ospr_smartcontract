@@ -5,9 +5,10 @@
 
 ### Pre-requis
 
-go
-git
+-go
+-git
 
+//TO DO list of dependencies 
 
 ### Tendermint
 Ethermint relies on the [Tendermint](https://github.com/tendermint/tendermint) executable to provide the networking and consensus engines.
@@ -61,6 +62,7 @@ If tendermint exists, you have to clean the database and the logfile
 ```bash
 tendermint unsafe_reset_all
 ```
+---
 
 ## Running
 In the first shell, launch ethermint:
@@ -82,6 +84,8 @@ In a third shell, launch the lite client:
 ```bash
 npm run dev
 ```
+---
+
 ## Troubles ?
 
 Check firstly your firewall
