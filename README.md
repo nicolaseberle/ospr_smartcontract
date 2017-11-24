@@ -1,33 +1,53 @@
 # ospr_smartcontract
 
 
+## Installation
 
-
-
+```bash
 mkdir rep_travail
 cd rep_travail
+```
 
-//init d ethermint et tendermint
+## RUN
+### Initialisation of ethermint and tendermint
+
+```bash
 rm -rf ~/.ethermint
 ethermint --datadir ~/.ethermint_ospr init ../myApp/genesis.json
 tendermint init --home ~/.ethermint_ospr/tendermint
+```
+### Some keys
+
+```bash
 cp -r keystore ~/.ethermint_ospr
+```
 
-//Si tendermint existe
+### Warning
+If tendermint exists, you have to clean the database and the logfile
+
+```bash
 tendermint unsafe_reset_all
+```
 
+## Running
+In the first terminal (T1) launch ethermint:
 
-//Dans un permier terminal (T1)
+```bash
 ethermint --datadir ~/.ethermint_ospr --rpc --rpcaddr=0.0.0.0 --ws --wsaddr=0.0.0.0 --rpccorsdomain "*" --rpcapi eth,net,web3,personal,admin -unlock 0x7eff122b94897ea5b0e2a9abf47b86337fafebdc
-//passephrase : 1234
+```
+In order to use the address "0x7eff122b94897ea5b0e2a9abf47b86337fafebdc" we have to unlock it (to avoid to type the passphrase...).  
+passphrase : 1234
 
 
-//Dans un deuxième terminal (T2)
+In a second terminal (T2) launch tendermint
+```bash
 tendermint  --home ~/.ethermint_ospr/tendermint node
+```
+In a third terminal (T3) launch the lite client
 
-//Dans un troisième terminal (T3)
+```bash
 npm run dev
-
+```
 
 
 
