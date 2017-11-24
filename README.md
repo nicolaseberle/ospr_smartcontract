@@ -40,9 +40,14 @@ git clone https://github.com/nicolaseberle/ospr_smartcontract.git
 ## RUN
 ### Initialisation of ethermint and tendermint
 
+if " ~/.ethermint_ospr" exists, erase it.
 
 ```bash
-rm -rf ~/.ethermint
+rm -rf ~/.ethermint_ospr
+```
+Then, initiate ethermint and tendermint with genesis.json file. 
+
+```bash
 ethermint --datadir ~/.ethermint_ospr init genesis.json
 tendermint init --home ~/.ethermint_ospr/tendermint
 ```
