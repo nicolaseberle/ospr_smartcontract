@@ -11,12 +11,17 @@ cd rep_travail
 ## RUN
 ### Initialisation of ethermint and tendermint
 
+
 ```bash
 rm -rf ~/.ethermint
-ethermint --datadir ~/.ethermint_ospr init ../myApp/genesis.json
+ethermint --datadir ~/.ethermint_ospr init genesis.json
 tendermint init --home ~/.ethermint_ospr/tendermint
 ```
+genesis.json is necessary to init the VM.
+
 ### Some keys
+
+You can optionally copy a keystore to the Ethereum folder that you used in the steps above i.e `~/.ethermint` e.g
 
 ```bash
 cp -r keystore ~/.ethermint_ospr
@@ -30,31 +35,49 @@ tendermint unsafe_reset_all
 ```
 
 ## Running
-In the first terminal (T1) launch ethermint:
+In the first shell, launch ethermint:
 
 ```bash
 ethermint --datadir ~/.ethermint_ospr --rpc --rpcaddr=0.0.0.0 --ws --wsaddr=0.0.0.0 --rpccorsdomain "*" --rpcapi eth,net,web3,personal,admin -unlock 0x7eff122b94897ea5b0e2a9abf47b86337fafebdc
 ```
-In order to use the address "0x7eff122b94897ea5b0e2a9abf47b86337fafebdc" we have to unlock it (to avoid to type the passphrase...).  
-passphrase : 1234
+
+* Note:
+In order to use the address "0x7eff122b94897ea5b0e2a9abf47b86337fafebdc" we have to unlock it (to avoid to type the passphrase...).  The **password** for the default account is *1234*.
 
 
-In a second terminal (T2) launch tendermint
+In a second shell, launch tendermint
 ```bash
 tendermint  --home ~/.ethermint_ospr/tendermint node
 ```
-In a third terminal (T3) launch the lite client
+In a third shell, launch the lite client:
 
 ```bash
 npm run dev
 ```
+## Troubles ?
+
+Check firstly your firewall
+
+### Firewall
+The firewall can block some ports. 
+
+```bash
+sudo iptables -L
+```
+
+You can find a generic firewall source which can be used to initialize your firewall
+
+```bash
+sudo firewall.init
+```
+
+//TO DO mettre ce fichier source qq part
 
 
 
 
-/********************************************************************/
-genesis.json
-/********************************************************************/
+
+
 {
     "alloc": {
         "0x7eff122b94897ea5b0e2a9abf47b86337fafebdc": {
@@ -78,4 +101,3 @@ genesis.json
     "timestamp": "0x00"
 }
 
-/********************************************************************/
