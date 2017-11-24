@@ -1,6 +1,3 @@
-# ospr_smartcontract
-
-
 
 
 
