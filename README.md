@@ -3,10 +3,37 @@
 
 ## Installation
 
+### Pre-requis
+-go
+-git
+
+
+### Tendermint
+Ethermint relies on the [Tendermint](https://github.com/tendermint/tendermint) executable to provide the networking and consensus engines.
+
+```bash
+go get -u -d github.com/tendermint/tendermint
+
+cd $GOPATH/src/github.com/tendermint/tendermint
+
+make install
+```
+This will download all the necessary dependencies and install tendermint in your $PATH.
+
+### OSPR_smartcontract sources
+
+Create your own working directory :
+
 ```bash
 mkdir rep_travail
 cd rep_travail
 ```
+Then, download the github repository [OSPR_smartcontract](https://github.com/nicolaseberle/ospr_smartcontract) 
+
+```bash
+git clone https://github.com/nicolaseberle/ospr_smartcontract.git
+```
+
 
 ## RUN
 ### Initialisation of ethermint and tendermint
