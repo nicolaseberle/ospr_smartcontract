@@ -1,0 +1,30 @@
+[
+  {
+    "id": 0,
+    "name": "Article 1",
+    "picture": "images/image_1.jpeg",
+    "breed": "Mathematics",
+    "location": "Paris, France"
+  },
+  {
+    "id": 1,
+    "name": "Article 2",
+    "picture": "images/image_1.jpeg",
+    "breed": "Biology",
+    "location": "Paris,France"
+  },
+  {
+    "id": 2,
+    "name": "Article 3",
+    "picture": "images/image_1.jpeg",
+    "breed": "Physics",
+    "location": "Paris, France"
+  },
+  {
+    "id": 3,
+    "name": "Biology",
+    "picture": "images/image_1.jpeg",
+    "breed": "Biology",
+    "location": "Paris, France"
+  }
+]

@@ -1,7 +1,7 @@
 pragma solidity ^0.4.0;
 contract Publisher{
 
-    enum State {submited, pending, validated};
+    enum State {submited, pending, validated}
 
     struct Reviewer {
     	address addr;
@@ -17,7 +17,7 @@ contract Publisher{
       uint rejectedVoteCount;
 
 	    mapping(address => Reviewer) reviewers;
-	   }
+	  }
 
 
     uint numPublications;
@@ -29,6 +29,7 @@ contract Publisher{
       publications[publicationID] = Publication(msg.sender,now,0,State.submited,0,0 );
       return publicationID;
     }
+    function
 
 
     function validateArticle(uint publicationID) public{
