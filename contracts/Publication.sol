@@ -50,10 +50,10 @@ contract Publication {
 
     /// Give $(reviewer) the right to vote on this publication
     /// May only be called by $(chairperson).
-    function giveRightToReview(address reviewer) private{
-        if (msg.sender != author || reviewers[reviewer].voted) return;
-        reviewers[reviewer].weight = 1;
-    }
+    //function giveRightToReview(address reviewer) private{
+    //    if (msg.sender != author || reviewers[reviewer].voted) return;
+    //    reviewers[reviewer].weight = 1;
+    //}
 
     /// Give a single vote to validation $(validation). yes or no
     function validateArticle() public{
@@ -89,5 +89,17 @@ contract Publication {
         return author;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
