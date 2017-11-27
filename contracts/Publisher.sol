@@ -29,8 +29,10 @@ contract Publisher{
       publications[publicationID] = Publication(msg.sender,now,0,State.submited,0,0 );
       return publicationID;
     }
-    function
 
+    function getNumSubmitedArticles() public constant returns(uint){
+      return numPublications;
+    }
 
     function validateArticle(uint publicationID) public{
       Publication storage paper = publications[publicationID];
@@ -59,9 +61,18 @@ contract Publisher{
       Publication storage paper = publications[publicationID];
       return paper.validatedVoteCount;
     }
+
     function getStatusArticle(uint publicationID) public constant returns(State){
       Publication storage paper = publications[publicationID];
       return paper.state;
     }
 
+    function getAuthorArticle(uint publicationID) public constant returns(address){
+      Publication storage paper = publications[publicationID];
+      return paper.author;
+    }
+    function getNumberOfReviewers(uint publicationID) public returns(uint){
+      Publication storage paper = publications[publicationID];
+      return paper.numReviewers
+    }
 }

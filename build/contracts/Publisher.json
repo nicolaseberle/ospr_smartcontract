@@ -50,6 +50,20 @@
     },
     {
       "constant": true,
+      "inputs": [],
+      "name": "getNumSubmitedArticles",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
       "inputs": [
         {
           "name": "publicationID",
@@ -82,18 +96,18 @@
       "type": "function"
     }
   ],
-  "bytecode": "0x6060604052341561000f57600080fd5b6106df8061001e6000396000f30060606040526004361061006d576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063283a485e14610072578063517c92c2146100955780635f59ef53146100be578063d4387b6d14610103578063dc19628e1461013a575b600080fd5b341561007d57600080fd5b610093600480803590602001909190505061015d565b005b34156100a057600080fd5b6100a8610335565b6040518082815260200191505060405180910390f35b34156100c957600080fd5b6100df6004808035906020019091905050610450565b604051808260028111156100ef57fe5b60ff16815260200191505060405180910390f35b341561010e57600080fd5b6101246004808035906020019091905050610482565b6040518082815260200191505060405180910390f35b341561014557600080fd5b61015b60048080359060200190919050506104a7565b005b6000806001600084815260200190815260200160002091508160060160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002090508060000160149054906101000a900460ff168061022457503373ffffffffffffffffffffffffffffffffffffffff168260000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16145b1561022e57610330565b60408051908101604052803373ffffffffffffffffffffffffffffffffffffffff168152602001600115158152508260060160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060208201518160000160146101000a81548160ff021916908315150217905550905050816002016000815480929190600101919050555081600501600081548092919060010191905055505b505050565b600080600081548092919060010191905055905060c0604051908101604052803373ffffffffffffffffffffffffffffffffffffffff168152602001428152602001600081526020016000600281111561038b57fe5b81526020016000815260200160008152506001600083815260200190815260200160002060008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550602082015181600101556040820151816002015560608201518160030160006101000a81548160ff0219169083600281111561042e57fe5b02179055506080820151816004015560a0820151816005015590505080905090565b6000806001600084815260200190815260200160002090508060030160009054906101000a900460ff16915050919050565b6000806001600084815260200190815260200160002090508060040154915050919050565b6000806001600084815260200190815260200160002091508160060160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002090508060000160149054906101000a900460ff168061056e57503373ffffffffffffffffffffffffffffffffffffffff168260000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16145b15610578576106ae565b60408051908101604052803373ffffffffffffffffffffffffffffffffffffffff168152602001600115158152508260060160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060208201518160000160146101000a81548160ff021916908315150217905550905050816002016000815480929190600101919050555081600401600081548092919060010191905055506003826004015411156106ad5760028260030160006101000a81548160ff021916908360028111156106a757fe5b02179055505b5b5050505600a165627a7a72305820ffcd1c78205caf84dfee952f6cbe2ccffe520b147e12754111a6d6192f7bb6b60029",
-  "deployedBytecode": "0x60606040526004361061006d576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063283a485e14610072578063517c92c2146100955780635f59ef53146100be578063d4387b6d14610103578063dc19628e1461013a575b600080fd5b341561007d57600080fd5b610093600480803590602001909190505061015d565b005b34156100a057600080fd5b6100a8610335565b6040518082815260200191505060405180910390f35b34156100c957600080fd5b6100df6004808035906020019091905050610450565b604051808260028111156100ef57fe5b60ff16815260200191505060405180910390f35b341561010e57600080fd5b6101246004808035906020019091905050610482565b6040518082815260200191505060405180910390f35b341561014557600080fd5b61015b60048080359060200190919050506104a7565b005b6000806001600084815260200190815260200160002091508160060160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002090508060000160149054906101000a900460ff168061022457503373ffffffffffffffffffffffffffffffffffffffff168260000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16145b1561022e57610330565b60408051908101604052803373ffffffffffffffffffffffffffffffffffffffff168152602001600115158152508260060160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060208201518160000160146101000a81548160ff021916908315150217905550905050816002016000815480929190600101919050555081600501600081548092919060010191905055505b505050565b600080600081548092919060010191905055905060c0604051908101604052803373ffffffffffffffffffffffffffffffffffffffff168152602001428152602001600081526020016000600281111561038b57fe5b81526020016000815260200160008152506001600083815260200190815260200160002060008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550602082015181600101556040820151816002015560608201518160030160006101000a81548160ff0219169083600281111561042e57fe5b02179055506080820151816004015560a0820151816005015590505080905090565b6000806001600084815260200190815260200160002090508060030160009054906101000a900460ff16915050919050565b6000806001600084815260200190815260200160002090508060040154915050919050565b6000806001600084815260200190815260200160002091508160060160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002090508060000160149054906101000a900460ff168061056e57503373ffffffffffffffffffffffffffffffffffffffff168260000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16145b15610578576106ae565b60408051908101604052803373ffffffffffffffffffffffffffffffffffffffff168152602001600115158152508260060160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060208201518160000160146101000a81548160ff021916908315150217905550905050816002016000815480929190600101919050555081600401600081548092919060010191905055506003826004015411156106ad5760028260030160006101000a81548160ff021916908360028111156106a757fe5b02179055505b5b5050505600a165627a7a72305820ffcd1c78205caf84dfee952f6cbe2ccffe520b147e12754111a6d6192f7bb6b60029",
-  "sourceMap": "24:2030:2:-;;;;;;;;;;;;;;;;;",
-  "deployedSourceMap": "24:2030:2:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1302:377;;;;;;;;;;;;;;;;;;;;;;;;;;603:223;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1879:172;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1685:189;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;833:463;;;;;;;;;;;;;;;;;;;;;;;;;;1302:377;1359:25;1421:23;1387:12;:27;1400:13;1387:27;;;;;;;;;;;1359:55;;1447:5;:15;;:27;1463:10;1447:27;;;;;;;;;;;;;;;1421:53;;1486:6;:12;;;;;;;;;;;;:40;;;;1516:10;1502:24;;:5;:12;;;;;;;;;;;;:24;;;1486:40;1482:54;;;1529:7;;1482:54;1572:39;;;;;;;;;1588:10;1572:39;;;;;;1605:4;1572:39;;;;;1542:5;:15;;:27;1558:10;1542:27;;;;;;;;;;;;;;;:69;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1619:5;:18;;;:20;;;;;;;;;;;;;1646:5;:23;;;:25;;;;;;;;;;;;;1302:377;;;;:::o;603:223::-;643:18;686:15;;:18;;;;;;;;;;;;670:34;;742:49;;;;;;;;;754:10;742:49;;;;;;765:3;742:49;;;;769:1;742:49;;;;771:14;742:49;;;;;;;;;;;;786:1;742:49;;;;788:1;742:49;;;712:12;:27;725:13;712:27;;;;;;;;;;;:79;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;806:13;799:20;;603:223;:::o;1879:172::-;1949:5;1963:25;1991:12;:27;2004:13;1991:27;;;;;;;;;;;1963:55;;2033:5;:11;;;;;;;;;;;;2026:18;;1879:172;;;;:::o;1685:189::-;1760:4;1773:25;1801:12;:27;1814:13;1801:27;;;;;;;;;;;1773:55;;1843:5;:24;;;1836:31;;1685:189;;;;:::o;833:463::-;892:25;954:23;920:12;:27;933:13;920:27;;;;;;;;;;;892:55;;980:5;:15;;:27;996:10;980:27;;;;;;;;;;;;;;;954:53;;1019:6;:12;;;;;;;;;;;;:40;;;;1049:10;1035:24;;:5;:12;;;;;;;;;;;;:24;;;1019:40;1015:54;;;1062:7;;1015:54;1105:39;;;;;;;;;1121:10;1105:39;;;;;;1138:4;1105:39;;;;;1075:5;:15;;:27;1091:10;1075:27;;;;;;;;;;;;;;;:69;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1152:5;:18;;;:20;;;;;;;;;;;;;1179:5;:24;;;:26;;;;;;;;;;;;;1241:1;1216:5;:24;;;:26;1213:77;;;1267:15;1253:5;:11;;;:29;;;;;;;;;;;;;;;;;;;;;;;;1213:77;833:463;;;;:::o",
-  "source": "pragma solidity ^0.4.0;\ncontract Publisher{\n\n    enum State {submited, pending, validated}\n\n    struct Reviewer {\n    \taddress addr;\n      bool voted;\n    }\n    //Validation is the sum of positive and negative vote of the article\n    struct Publication {\n      address author;\n\t    uint creationDate;\n\t    uint numReviewers;\n     \tState state;\n\t    uint validatedVoteCount;\n      uint rejectedVoteCount;\n\n\t    mapping(address => Reviewer) reviewers;\n\t   }\n\n\n    uint numPublications;\n    mapping(uint => Publication) publications;\n\n    /// Create a new publication with hashcontent of the document.\n    function submitArticle() public returns(uint publicationID){\n      publicationID = numPublications ++;\n      publications[publicationID] = Publication(msg.sender,now,0,State.submited,0,0 );\n      return publicationID;\n    }\n\n\n    function validateArticle(uint publicationID) public{\n      Publication storage paper = publications[publicationID];\n\t    Reviewer storage sender = paper.reviewers[msg.sender];\n      if (sender.voted || paper.author==msg.sender ) return;\n\t    paper.reviewers[msg.sender] = Reviewer({addr: msg.sender,voted:true});\n      paper.numReviewers++;\n\t    paper.validatedVoteCount++;\n\n\t    if(paper.validatedVoteCount>3){\n        paper.state = State.validated;\n\t    }\n    }\n\n    function rejectArticle(uint publicationID) public{\n      Publication storage paper = publications[publicationID];\n\t    Reviewer storage sender = paper.reviewers[msg.sender];\n      if (sender.voted || paper.author==msg.sender ) return;\n\t    paper.reviewers[msg.sender] = Reviewer({addr: msg.sender,voted:true});\n      paper.numReviewers++;\n\t    paper.rejectedVoteCount++;\n\n    }\n\n    function getValidatedVoteCount(uint publicationID) public constant returns(uint){\n      Publication storage paper = publications[publicationID];\n      return paper.validatedVoteCount;\n    }\n    function getStatusArticle(uint publicationID) public constant returns(State){\n      Publication storage paper = publications[publicationID];\n      return paper.state;\n    }\n\n}\n",
+  "bytecode": "0x6060604052341561000f57600080fd5b61071c8061001e6000396000f300606060405260043610610078576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063283a485e1461007d578063517c92c2146100a05780635f59ef53146100c95780637000f7651461010e578063d4387b6d14610137578063dc19628e1461016e575b600080fd5b341561008857600080fd5b61009e6004808035906020019091905050610191565b005b34156100ab57600080fd5b6100b3610369565b6040518082815260200191505060405180910390f35b34156100d457600080fd5b6100ea6004808035906020019091905050610484565b604051808260028111156100fa57fe5b60ff16815260200191505060405180910390f35b341561011957600080fd5b6101216104b6565b6040518082815260200191505060405180910390f35b341561014257600080fd5b61015860048080359060200190919050506104bf565b6040518082815260200191505060405180910390f35b341561017957600080fd5b61018f60048080359060200190919050506104e4565b005b6000806001600084815260200190815260200160002091508160060160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002090508060000160149054906101000a900460ff168061025857503373ffffffffffffffffffffffffffffffffffffffff168260000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16145b1561026257610364565b60408051908101604052803373ffffffffffffffffffffffffffffffffffffffff168152602001600115158152508260060160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060208201518160000160146101000a81548160ff021916908315150217905550905050816002016000815480929190600101919050555081600501600081548092919060010191905055505b505050565b600080600081548092919060010191905055905060c0604051908101604052803373ffffffffffffffffffffffffffffffffffffffff16815260200142815260200160008152602001600060028111156103bf57fe5b81526020016000815260200160008152506001600083815260200190815260200160002060008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550602082015181600101556040820151816002015560608201518160030160006101000a81548160ff0219169083600281111561046257fe5b02179055506080820151816004015560a0820151816005015590505080905090565b6000806001600084815260200190815260200160002090508060030160009054906101000a900460ff16915050919050565b60008054905090565b6000806001600084815260200190815260200160002090508060040154915050919050565b6000806001600084815260200190815260200160002091508160060160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002090508060000160149054906101000a900460ff16806105ab57503373ffffffffffffffffffffffffffffffffffffffff168260000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16145b156105b5576106eb565b60408051908101604052803373ffffffffffffffffffffffffffffffffffffffff168152602001600115158152508260060160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060208201518160000160146101000a81548160ff021916908315150217905550905050816002016000815480929190600101919050555081600401600081548092919060010191905055506003826004015411156106ea5760028260030160006101000a81548160ff021916908360028111156106e457fe5b02179055505b5b5050505600a165627a7a72305820357c354caf55a9d442797a9448f24c28c89842dfcc0a889aae47293dd0bd4b360029",
+  "deployedBytecode": "0x606060405260043610610078576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063283a485e1461007d578063517c92c2146100a05780635f59ef53146100c95780637000f7651461010e578063d4387b6d14610137578063dc19628e1461016e575b600080fd5b341561008857600080fd5b61009e6004808035906020019091905050610191565b005b34156100ab57600080fd5b6100b3610369565b6040518082815260200191505060405180910390f35b34156100d457600080fd5b6100ea6004808035906020019091905050610484565b604051808260028111156100fa57fe5b60ff16815260200191505060405180910390f35b341561011957600080fd5b6101216104b6565b6040518082815260200191505060405180910390f35b341561014257600080fd5b61015860048080359060200190919050506104bf565b6040518082815260200191505060405180910390f35b341561017957600080fd5b61018f60048080359060200190919050506104e4565b005b6000806001600084815260200190815260200160002091508160060160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002090508060000160149054906101000a900460ff168061025857503373ffffffffffffffffffffffffffffffffffffffff168260000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16145b1561026257610364565b60408051908101604052803373ffffffffffffffffffffffffffffffffffffffff168152602001600115158152508260060160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060208201518160000160146101000a81548160ff021916908315150217905550905050816002016000815480929190600101919050555081600501600081548092919060010191905055505b505050565b600080600081548092919060010191905055905060c0604051908101604052803373ffffffffffffffffffffffffffffffffffffffff16815260200142815260200160008152602001600060028111156103bf57fe5b81526020016000815260200160008152506001600083815260200190815260200160002060008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550602082015181600101556040820151816002015560608201518160030160006101000a81548160ff0219169083600281111561046257fe5b02179055506080820151816004015560a0820151816005015590505080905090565b6000806001600084815260200190815260200160002090508060030160009054906101000a900460ff16915050919050565b60008054905090565b6000806001600084815260200190815260200160002090508060040154915050919050565b6000806001600084815260200190815260200160002091508160060160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002090508060000160149054906101000a900460ff16806105ab57503373ffffffffffffffffffffffffffffffffffffffff168260000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16145b156105b5576106eb565b60408051908101604052803373ffffffffffffffffffffffffffffffffffffffff168152602001600115158152508260060160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060208201518160000160146101000a81548160ff021916908315150217905550905050816002016000815480929190600101919050555081600401600081548092919060010191905055506003826004015411156106ea5760028260030160006101000a81548160ff021916908360028111156106e457fe5b02179055505b5b5050505600a165627a7a72305820357c354caf55a9d442797a9448f24c28c89842dfcc0a889aae47293dd0bd4b360029",
+  "sourceMap": "24:2134:0:-;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "24:2134:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1406:377;;;;;;;;;;;;;;;;;;;;;;;;;;602:223;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1983:172;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;831:100;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1789:189;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;937:463;;;;;;;;;;;;;;;;;;;;;;;;;;1406:377;1463:25;1525:23;1491:12;:27;1504:13;1491:27;;;;;;;;;;;1463:55;;1551:5;:15;;:27;1567:10;1551:27;;;;;;;;;;;;;;;1525:53;;1590:6;:12;;;;;;;;;;;;:40;;;;1620:10;1606:24;;:5;:12;;;;;;;;;;;;:24;;;1590:40;1586:54;;;1633:7;;1586:54;1676:39;;;;;;;;;1692:10;1676:39;;;;;;1709:4;1676:39;;;;;1646:5;:15;;:27;1662:10;1646:27;;;;;;;;;;;;;;;:69;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1723:5;:18;;;:20;;;;;;;;;;;;;1750:5;:23;;;:25;;;;;;;;;;;;;1406:377;;;;:::o;602:223::-;642:18;685:15;;:18;;;;;;;;;;;;669:34;;741:49;;;;;;;;;753:10;741:49;;;;;;764:3;741:49;;;;768:1;741:49;;;;770:14;741:49;;;;;;;;;;;;785:1;741:49;;;;787:1;741:49;;;711:12;:27;724:13;711:27;;;;;;;;;;;:79;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;805:13;798:20;;602:223;:::o;1983:172::-;2053:5;2067:25;2095:12;:27;2108:13;2095:27;;;;;;;;;;;2067:55;;2137:5;:11;;;;;;;;;;;;2130:18;;1983:172;;;;:::o;831:100::-;889:4;909:15;;902:22;;831:100;:::o;1789:189::-;1864:4;1877:25;1905:12;:27;1918:13;1905:27;;;;;;;;;;;1877:55;;1947:5;:24;;;1940:31;;1789:189;;;;:::o;937:463::-;996:25;1058:23;1024:12;:27;1037:13;1024:27;;;;;;;;;;;996:55;;1084:5;:15;;:27;1100:10;1084:27;;;;;;;;;;;;;;;1058:53;;1123:6;:12;;;;;;;;;;;;:40;;;;1153:10;1139:24;;:5;:12;;;;;;;;;;;;:24;;;1123:40;1119:54;;;1166:7;;1119:54;1209:39;;;;;;;;;1225:10;1209:39;;;;;;1242:4;1209:39;;;;;1179:5;:15;;:27;1195:10;1179:27;;;;;;;;;;;;;;;:69;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1256:5;:18;;;:20;;;;;;;;;;;;;1283:5;:24;;;:26;;;;;;;;;;;;;1345:1;1320:5;:24;;;:26;1317:77;;;1371:15;1357:5;:11;;;:29;;;;;;;;;;;;;;;;;;;;;;;;1317:77;937:463;;;;:::o",
+  "source": "pragma solidity ^0.4.0;\ncontract Publisher{\n\n    enum State {submited, pending, validated}\n\n    struct Reviewer {\n    \taddress addr;\n      bool voted;\n    }\n    //Validation is the sum of positive and negative vote of the article\n    struct Publication {\n      address author;\n\t    uint creationDate;\n\t    uint numReviewers;\n     \tState state;\n\t    uint validatedVoteCount;\n      uint rejectedVoteCount;\n\n\t    mapping(address => Reviewer) reviewers;\n\t  }\n\n\n    uint numPublications;\n    mapping(uint => Publication) publications;\n\n    /// Create a new publication with hashcontent of the document.\n    function submitArticle() public returns(uint publicationID){\n      publicationID = numPublications ++;\n      publications[publicationID] = Publication(msg.sender,now,0,State.submited,0,0 );\n      return publicationID;\n    }\n\n    function getNumSubmitedArticles() public constant returns(uint){\n      return numPublications;\n    }\n\n    function validateArticle(uint publicationID) public{\n      Publication storage paper = publications[publicationID];\n\t    Reviewer storage sender = paper.reviewers[msg.sender];\n      if (sender.voted || paper.author==msg.sender ) return;\n\t    paper.reviewers[msg.sender] = Reviewer({addr: msg.sender,voted:true});\n      paper.numReviewers++;\n\t    paper.validatedVoteCount++;\n\n\t    if(paper.validatedVoteCount>3){\n        paper.state = State.validated;\n\t    }\n    }\n\n    function rejectArticle(uint publicationID) public{\n      Publication storage paper = publications[publicationID];\n\t    Reviewer storage sender = paper.reviewers[msg.sender];\n      if (sender.voted || paper.author==msg.sender ) return;\n\t    paper.reviewers[msg.sender] = Reviewer({addr: msg.sender,voted:true});\n      paper.numReviewers++;\n\t    paper.rejectedVoteCount++;\n\n    }\n\n    function getValidatedVoteCount(uint publicationID) public constant returns(uint){\n      Publication storage paper = publications[publicationID];\n      return paper.validatedVoteCount;\n    }\n    function getStatusArticle(uint publicationID) public constant returns(State){\n      Publication storage paper = publications[publicationID];\n      return paper.state;\n    }\n\n}\n",
   "sourcePath": "/home/neberle/workspace/exemple_git/ospr_smartcontract/contracts/Publisher.sol",
   "ast": {
     "attributes": {
       "absolutePath": "/home/neberle/workspace/exemple_git/ospr_smartcontract/contracts/Publisher.sol",
       "exportedSymbols": {
         "Publisher": [
-          462
+          223
         ]
       }
     },
@@ -107,9 +121,9 @@
             ".0"
           ]
         },
-        "id": 248,
+        "id": 1,
         "name": "PragmaDirective",
-        "src": "0:23:2"
+        "src": "0:23:0"
       },
       {
         "attributes": {
@@ -123,10 +137,10 @@
           "documentation": null,
           "fullyImplemented": true,
           "linearizedBaseContracts": [
-            462
+            223
           ],
           "name": "Publisher",
-          "scope": 463
+          "scope": 224
         },
         "children": [
           {
@@ -139,36 +153,36 @@
                 "attributes": {
                   "name": "submited"
                 },
-                "id": 249,
+                "id": 2,
                 "name": "EnumValue",
-                "src": "61:8:2"
+                "src": "61:8:0"
               },
               {
                 "attributes": {
                   "name": "pending"
                 },
-                "id": 250,
+                "id": 3,
                 "name": "EnumValue",
-                "src": "71:7:2"
+                "src": "71:7:0"
               },
               {
                 "attributes": {
                   "name": "validated"
                 },
-                "id": 251,
+                "id": 4,
                 "name": "EnumValue",
-                "src": "80:9:2"
+                "src": "80:9:0"
               }
             ],
-            "id": 252,
+            "id": 5,
             "name": "EnumDefinition",
-            "src": "49:41:2"
+            "src": "49:41:0"
           },
           {
             "attributes": {
               "canonicalName": "Publisher.Reviewer",
               "name": "Reviewer",
-              "scope": 462,
+              "scope": 223,
               "visibility": "public"
             },
             "children": [
@@ -176,7 +190,7 @@
                 "attributes": {
                   "constant": false,
                   "name": "addr",
-                  "scope": 257,
+                  "scope": 10,
                   "stateVariable": false,
                   "storageLocation": "default",
                   "type": "address",
@@ -189,20 +203,20 @@
                       "name": "address",
                       "type": "address"
                     },
-                    "id": 253,
+                    "id": 6,
                     "name": "ElementaryTypeName",
-                    "src": "119:7:2"
+                    "src": "119:7:0"
                   }
                 ],
-                "id": 254,
+                "id": 7,
                 "name": "VariableDeclaration",
-                "src": "119:12:2"
+                "src": "119:12:0"
               },
               {
                 "attributes": {
                   "constant": false,
                   "name": "voted",
-                  "scope": 257,
+                  "scope": 10,
                   "stateVariable": false,
                   "storageLocation": "default",
                   "type": "bool",
@@ -215,25 +229,25 @@
                       "name": "bool",
                       "type": "bool"
                     },
-                    "id": 255,
+                    "id": 8,
                     "name": "ElementaryTypeName",
-                    "src": "139:4:2"
+                    "src": "139:4:0"
                   }
                 ],
-                "id": 256,
+                "id": 9,
                 "name": "VariableDeclaration",
-                "src": "139:10:2"
+                "src": "139:10:0"
               }
             ],
-            "id": 257,
+            "id": 10,
             "name": "StructDefinition",
-            "src": "96:60:2"
+            "src": "96:60:0"
           },
           {
             "attributes": {
               "canonicalName": "Publisher.Publication",
               "name": "Publication",
-              "scope": 462,
+              "scope": 223,
               "visibility": "public"
             },
             "children": [
@@ -241,7 +255,7 @@
                 "attributes": {
                   "constant": false,
                   "name": "author",
-                  "scope": 274,
+                  "scope": 27,
                   "stateVariable": false,
                   "storageLocation": "default",
                   "type": "address",
@@ -254,20 +268,20 @@
                       "name": "address",
                       "type": "address"
                     },
-                    "id": 258,
+                    "id": 11,
                     "name": "ElementaryTypeName",
-                    "src": "261:7:2"
+                    "src": "261:7:0"
                   }
                 ],
-                "id": 259,
+                "id": 12,
                 "name": "VariableDeclaration",
-                "src": "261:14:2"
+                "src": "261:14:0"
               },
               {
                 "attributes": {
                   "constant": false,
                   "name": "creationDate",
-                  "scope": 274,
+                  "scope": 27,
                   "stateVariable": false,
                   "storageLocation": "default",
                   "type": "uint256",
@@ -280,20 +294,20 @@
                       "name": "uint",
                       "type": "uint256"
                     },
-                    "id": 260,
+                    "id": 13,
                     "name": "ElementaryTypeName",
-                    "src": "282:4:2"
+                    "src": "282:4:0"
                   }
                 ],
-                "id": 261,
+                "id": 14,
                 "name": "VariableDeclaration",
-                "src": "282:17:2"
+                "src": "282:17:0"
               },
               {
                 "attributes": {
                   "constant": false,
                   "name": "numReviewers",
-                  "scope": 274,
+                  "scope": 27,
                   "stateVariable": false,
                   "storageLocation": "default",
                   "type": "uint256",
@@ -306,20 +320,20 @@
                       "name": "uint",
                       "type": "uint256"
                     },
-                    "id": 262,
+                    "id": 15,
                     "name": "ElementaryTypeName",
-                    "src": "306:4:2"
+                    "src": "306:4:0"
                   }
                 ],
-                "id": 263,
+                "id": 16,
                 "name": "VariableDeclaration",
-                "src": "306:17:2"
+                "src": "306:17:0"
               },
               {
                 "attributes": {
                   "constant": false,
                   "name": "state",
-                  "scope": 274,
+                  "scope": 27,
                   "stateVariable": false,
                   "storageLocation": "default",
                   "type": "enum Publisher.State",
@@ -331,23 +345,23 @@
                     "attributes": {
                       "contractScope": null,
                       "name": "State",
-                      "referencedDeclaration": 252,
+                      "referencedDeclaration": 5,
                       "type": "enum Publisher.State"
                     },
-                    "id": 264,
+                    "id": 17,
                     "name": "UserDefinedTypeName",
-                    "src": "331:5:2"
+                    "src": "331:5:0"
                   }
                 ],
-                "id": 265,
+                "id": 18,
                 "name": "VariableDeclaration",
-                "src": "331:11:2"
+                "src": "331:11:0"
               },
               {
                 "attributes": {
                   "constant": false,
                   "name": "validatedVoteCount",
-                  "scope": 274,
+                  "scope": 27,
                   "stateVariable": false,
                   "storageLocation": "default",
                   "type": "uint256",
@@ -360,20 +374,20 @@
                       "name": "uint",
                       "type": "uint256"
                     },
-                    "id": 266,
+                    "id": 19,
                     "name": "ElementaryTypeName",
-                    "src": "349:4:2"
+                    "src": "349:4:0"
                   }
                 ],
-                "id": 267,
+                "id": 20,
                 "name": "VariableDeclaration",
-                "src": "349:23:2"
+                "src": "349:23:0"
               },
               {
                 "attributes": {
                   "constant": false,
                   "name": "rejectedVoteCount",
-                  "scope": 274,
+                  "scope": 27,
                   "stateVariable": false,
                   "storageLocation": "default",
                   "type": "uint256",
@@ -386,20 +400,20 @@
                       "name": "uint",
                       "type": "uint256"
                     },
-                    "id": 268,
+                    "id": 21,
                     "name": "ElementaryTypeName",
-                    "src": "380:4:2"
+                    "src": "380:4:0"
                   }
                 ],
-                "id": 269,
+                "id": 22,
                 "name": "VariableDeclaration",
-                "src": "380:22:2"
+                "src": "380:22:0"
               },
               {
                 "attributes": {
                   "constant": false,
                   "name": "reviewers",
-                  "scope": 274,
+                  "scope": 27,
                   "stateVariable": false,
                   "storageLocation": "default",
                   "type": "mapping(address => struct Publisher.Reviewer storage ref)",
@@ -417,41 +431,41 @@
                           "name": "address",
                           "type": "address"
                         },
-                        "id": 270,
+                        "id": 23,
                         "name": "ElementaryTypeName",
-                        "src": "418:7:2"
+                        "src": "418:7:0"
                       },
                       {
                         "attributes": {
                           "contractScope": null,
                           "name": "Reviewer",
-                          "referencedDeclaration": 257,
+                          "referencedDeclaration": 10,
                           "type": "struct Publisher.Reviewer storage pointer"
                         },
-                        "id": 271,
+                        "id": 24,
                         "name": "UserDefinedTypeName",
-                        "src": "429:8:2"
+                        "src": "429:8:0"
                       }
                     ],
-                    "id": 272,
+                    "id": 25,
                     "name": "Mapping",
-                    "src": "410:28:2"
+                    "src": "410:28:0"
                   }
                 ],
-                "id": 273,
+                "id": 26,
                 "name": "VariableDeclaration",
-                "src": "410:38:2"
+                "src": "410:38:0"
               }
             ],
-            "id": 274,
+            "id": 27,
             "name": "StructDefinition",
-            "src": "234:221:2"
+            "src": "234:220:0"
           },
           {
             "attributes": {
               "constant": false,
               "name": "numPublications",
-              "scope": 462,
+              "scope": 223,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "uint256",
@@ -464,20 +478,20 @@
                   "name": "uint",
                   "type": "uint256"
                 },
-                "id": 275,
+                "id": 28,
                 "name": "ElementaryTypeName",
-                "src": "462:4:2"
+                "src": "461:4:0"
               }
             ],
-            "id": 276,
+            "id": 29,
             "name": "VariableDeclaration",
-            "src": "462:20:2"
+            "src": "461:20:0"
           },
           {
             "attributes": {
               "constant": false,
               "name": "publications",
-              "scope": 462,
+              "scope": 223,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "mapping(uint256 => struct Publisher.Publication storage ref)",
@@ -495,30 +509,30 @@
                       "name": "uint",
                       "type": "uint256"
                     },
-                    "id": 277,
+                    "id": 30,
                     "name": "ElementaryTypeName",
-                    "src": "496:4:2"
+                    "src": "495:4:0"
                   },
                   {
                     "attributes": {
                       "contractScope": null,
                       "name": "Publication",
-                      "referencedDeclaration": 274,
+                      "referencedDeclaration": 27,
                       "type": "struct Publisher.Publication storage pointer"
                     },
-                    "id": 278,
+                    "id": 31,
                     "name": "UserDefinedTypeName",
-                    "src": "504:11:2"
+                    "src": "503:11:0"
                   }
                 ],
-                "id": 279,
+                "id": 32,
                 "name": "Mapping",
-                "src": "488:28:2"
+                "src": "487:28:0"
               }
             ],
-            "id": 280,
+            "id": 33,
             "name": "VariableDeclaration",
-            "src": "488:41:2"
+            "src": "487:41:0"
           },
           {
             "attributes": {
@@ -530,7 +544,7 @@
               ],
               "name": "submitArticle",
               "payable": false,
-              "scope": 462,
+              "scope": 223,
               "stateMutability": "nonpayable",
               "superFunction": null,
               "visibility": "public"
@@ -543,9 +557,9 @@
                   ]
                 },
                 "children": [],
-                "id": 281,
+                "id": 34,
                 "name": "ParameterList",
-                "src": "625:2:2"
+                "src": "624:2:0"
               },
               {
                 "children": [
@@ -553,7 +567,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "publicationID",
-                      "scope": 308,
+                      "scope": 61,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -566,19 +580,19 @@
                           "name": "uint",
                           "type": "uint256"
                         },
-                        "id": 282,
+                        "id": 35,
                         "name": "ElementaryTypeName",
-                        "src": "643:4:2"
+                        "src": "642:4:0"
                       }
                     ],
-                    "id": 283,
+                    "id": 36,
                     "name": "VariableDeclaration",
-                    "src": "643:18:2"
+                    "src": "642:18:0"
                   }
                 ],
-                "id": 284,
+                "id": 37,
                 "name": "ParameterList",
-                "src": "642:20:2"
+                "src": "641:20:0"
               },
               {
                 "children": [
@@ -601,13 +615,13 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 283,
+                              "referencedDeclaration": 36,
                               "type": "uint256",
                               "value": "publicationID"
                             },
-                            "id": 285,
+                            "id": 38,
                             "name": "Identifier",
-                            "src": "670:13:2"
+                            "src": "669:13:0"
                           },
                           {
                             "attributes": {
@@ -627,28 +641,28 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 276,
+                                  "referencedDeclaration": 29,
                                   "type": "uint256",
                                   "value": "numPublications"
                                 },
-                                "id": 286,
+                                "id": 39,
                                 "name": "Identifier",
-                                "src": "686:15:2"
+                                "src": "685:15:0"
                               }
                             ],
-                            "id": 287,
+                            "id": 40,
                             "name": "UnaryOperation",
-                            "src": "686:18:2"
+                            "src": "685:18:0"
                           }
                         ],
-                        "id": 288,
+                        "id": 41,
                         "name": "Assignment",
-                        "src": "670:34:2"
+                        "src": "669:34:0"
                       }
                     ],
-                    "id": 289,
+                    "id": 42,
                     "name": "ExpressionStatement",
-                    "src": "670:34:2"
+                    "src": "669:34:0"
                   },
                   {
                     "children": [
@@ -679,13 +693,13 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 280,
+                                  "referencedDeclaration": 33,
                                   "type": "mapping(uint256 => struct Publisher.Publication storage ref)",
                                   "value": "publications"
                                 },
-                                "id": 290,
+                                "id": 43,
                                 "name": "Identifier",
-                                "src": "712:12:2"
+                                "src": "711:12:0"
                               },
                               {
                                 "attributes": {
@@ -693,18 +707,18 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 283,
+                                  "referencedDeclaration": 36,
                                   "type": "uint256",
                                   "value": "publicationID"
                                 },
-                                "id": 291,
+                                "id": 44,
                                 "name": "Identifier",
-                                "src": "725:13:2"
+                                "src": "724:13:0"
                               }
                             ],
-                            "id": 292,
+                            "id": 45,
                             "name": "IndexAccess",
-                            "src": "712:27:2"
+                            "src": "711:27:0"
                           },
                           {
                             "attributes": {
@@ -737,7 +751,7 @@
                                       "typeString": "int_const 0"
                                     },
                                     {
-                                      "typeIdentifier": "t_enum$_State_$252",
+                                      "typeIdentifier": "t_enum$_State_$5",
                                       "typeString": "enum Publisher.State"
                                     },
                                     {
@@ -752,13 +766,13 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 274,
+                                  "referencedDeclaration": 27,
                                   "type": "type(struct Publisher.Publication storage pointer)",
                                   "value": "Publication"
                                 },
-                                "id": 293,
+                                "id": 46,
                                 "name": "Identifier",
-                                "src": "742:11:2"
+                                "src": "741:11:0"
                               },
                               {
                                 "attributes": {
@@ -778,18 +792,18 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 474,
+                                      "referencedDeclaration": 235,
                                       "type": "msg",
                                       "value": "msg"
                                     },
-                                    "id": 294,
+                                    "id": 47,
                                     "name": "Identifier",
-                                    "src": "754:3:2"
+                                    "src": "753:3:0"
                                   }
                                 ],
-                                "id": 295,
+                                "id": 48,
                                 "name": "MemberAccess",
-                                "src": "754:10:2"
+                                "src": "753:10:0"
                               },
                               {
                                 "attributes": {
@@ -797,13 +811,13 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 476,
+                                  "referencedDeclaration": 237,
                                   "type": "uint256",
                                   "value": "now"
                                 },
-                                "id": 296,
+                                "id": 49,
                                 "name": "Identifier",
-                                "src": "765:3:2"
+                                "src": "764:3:0"
                               },
                               {
                                 "attributes": {
@@ -818,9 +832,9 @@
                                   "type": "int_const 0",
                                   "value": "0"
                                 },
-                                "id": 297,
+                                "id": 50,
                                 "name": "Literal",
-                                "src": "769:1:2"
+                                "src": "768:1:0"
                               },
                               {
                                 "attributes": {
@@ -840,18 +854,18 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 252,
+                                      "referencedDeclaration": 5,
                                       "type": "type(enum Publisher.State)",
                                       "value": "State"
                                     },
-                                    "id": 298,
+                                    "id": 51,
                                     "name": "Identifier",
-                                    "src": "771:5:2"
+                                    "src": "770:5:0"
                                   }
                                 ],
-                                "id": 299,
+                                "id": 52,
                                 "name": "MemberAccess",
-                                "src": "771:14:2"
+                                "src": "770:14:0"
                               },
                               {
                                 "attributes": {
@@ -866,9 +880,9 @@
                                   "type": "int_const 0",
                                   "value": "0"
                                 },
-                                "id": 300,
+                                "id": 53,
                                 "name": "Literal",
-                                "src": "786:1:2"
+                                "src": "785:1:0"
                               },
                               {
                                 "attributes": {
@@ -883,28 +897,28 @@
                                   "type": "int_const 0",
                                   "value": "0"
                                 },
-                                "id": 301,
+                                "id": 54,
                                 "name": "Literal",
-                                "src": "788:1:2"
+                                "src": "787:1:0"
                               }
                             ],
-                            "id": 302,
+                            "id": 55,
                             "name": "FunctionCall",
-                            "src": "742:49:2"
+                            "src": "741:49:0"
                           }
                         ],
-                        "id": 303,
+                        "id": 56,
                         "name": "Assignment",
-                        "src": "712:79:2"
+                        "src": "711:79:0"
                       }
                     ],
-                    "id": 304,
+                    "id": 57,
                     "name": "ExpressionStatement",
-                    "src": "712:79:2"
+                    "src": "711:79:0"
                   },
                   {
                     "attributes": {
-                      "functionReturnParameters": 284
+                      "functionReturnParameters": 37
                     },
                     "children": [
                       {
@@ -913,52 +927,63 @@
                           "overloadedDeclarations": [
                             null
                           ],
-                          "referencedDeclaration": 283,
+                          "referencedDeclaration": 36,
                           "type": "uint256",
                           "value": "publicationID"
                         },
-                        "id": 305,
+                        "id": 58,
                         "name": "Identifier",
-                        "src": "806:13:2"
+                        "src": "805:13:0"
                       }
                     ],
-                    "id": 306,
+                    "id": 59,
                     "name": "Return",
-                    "src": "799:20:2"
+                    "src": "798:20:0"
                   }
                 ],
-                "id": 307,
+                "id": 60,
                 "name": "Block",
-                "src": "662:164:2"
+                "src": "661:164:0"
               }
             ],
-            "id": 308,
+            "id": 61,
             "name": "FunctionDefinition",
-            "src": "603:223:2"
+            "src": "602:223:0"
           },
           {
             "attributes": {
-              "constant": false,
+              "constant": true,
               "implemented": true,
               "isConstructor": false,
               "modifiers": [
                 null
               ],
-              "name": "validateArticle",
+              "name": "getNumSubmitedArticles",
               "payable": false,
-              "scope": 462,
-              "stateMutability": "nonpayable",
+              "scope": 223,
+              "stateMutability": "view",
               "superFunction": null,
               "visibility": "public"
             },
             "children": [
               {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 62,
+                "name": "ParameterList",
+                "src": "862:2:0"
+              },
+              {
                 "children": [
                   {
                     "attributes": {
                       "constant": false,
-                      "name": "publicationID",
-                      "scope": 374,
+                      "name": "",
+                      "scope": 69,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -971,19 +996,104 @@
                           "name": "uint",
                           "type": "uint256"
                         },
-                        "id": 309,
+                        "id": 63,
                         "name": "ElementaryTypeName",
-                        "src": "858:4:2"
+                        "src": "889:4:0"
                       }
                     ],
-                    "id": 310,
+                    "id": 64,
                     "name": "VariableDeclaration",
-                    "src": "858:18:2"
+                    "src": "889:4:0"
                   }
                 ],
-                "id": 311,
+                "id": 65,
                 "name": "ParameterList",
-                "src": "857:20:2"
+                "src": "888:6:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 65
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "overloadedDeclarations": [
+                            null
+                          ],
+                          "referencedDeclaration": 29,
+                          "type": "uint256",
+                          "value": "numPublications"
+                        },
+                        "id": 66,
+                        "name": "Identifier",
+                        "src": "909:15:0"
+                      }
+                    ],
+                    "id": 67,
+                    "name": "Return",
+                    "src": "902:22:0"
+                  }
+                ],
+                "id": 68,
+                "name": "Block",
+                "src": "894:37:0"
+              }
+            ],
+            "id": 69,
+            "name": "FunctionDefinition",
+            "src": "831:100:0"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "validateArticle",
+              "payable": false,
+              "scope": 223,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "publicationID",
+                      "scope": 135,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 70,
+                        "name": "ElementaryTypeName",
+                        "src": "962:4:0"
+                      }
+                    ],
+                    "id": 71,
+                    "name": "VariableDeclaration",
+                    "src": "962:18:0"
+                  }
+                ],
+                "id": 72,
+                "name": "ParameterList",
+                "src": "961:20:0"
               },
               {
                 "attributes": {
@@ -992,16 +1102,16 @@
                   ]
                 },
                 "children": [],
-                "id": 312,
+                "id": 73,
                 "name": "ParameterList",
-                "src": "884:0:2"
+                "src": "988:0:0"
               },
               {
                 "children": [
                   {
                     "attributes": {
                       "assignments": [
-                        314
+                        75
                       ]
                     },
                     "children": [
@@ -1009,7 +1119,7 @@
                         "attributes": {
                           "constant": false,
                           "name": "paper",
-                          "scope": 374,
+                          "scope": 135,
                           "stateVariable": false,
                           "storageLocation": "storage",
                           "type": "struct Publisher.Publication storage pointer",
@@ -1021,17 +1131,17 @@
                             "attributes": {
                               "contractScope": null,
                               "name": "Publication",
-                              "referencedDeclaration": 274,
+                              "referencedDeclaration": 27,
                               "type": "struct Publisher.Publication storage pointer"
                             },
-                            "id": 313,
+                            "id": 74,
                             "name": "UserDefinedTypeName",
-                            "src": "892:11:2"
+                            "src": "996:11:0"
                           }
                         ],
-                        "id": 314,
+                        "id": 75,
                         "name": "VariableDeclaration",
-                        "src": "892:25:2"
+                        "src": "996:25:0"
                       },
                       {
                         "attributes": {
@@ -1049,13 +1159,13 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 280,
+                              "referencedDeclaration": 33,
                               "type": "mapping(uint256 => struct Publisher.Publication storage ref)",
                               "value": "publications"
                             },
-                            "id": 315,
+                            "id": 76,
                             "name": "Identifier",
-                            "src": "920:12:2"
+                            "src": "1024:12:0"
                           },
                           {
                             "attributes": {
@@ -1063,28 +1173,28 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 310,
+                              "referencedDeclaration": 71,
                               "type": "uint256",
                               "value": "publicationID"
                             },
-                            "id": 316,
+                            "id": 77,
                             "name": "Identifier",
-                            "src": "933:13:2"
+                            "src": "1037:13:0"
                           }
                         ],
-                        "id": 317,
+                        "id": 78,
                         "name": "IndexAccess",
-                        "src": "920:27:2"
+                        "src": "1024:27:0"
                       }
                     ],
-                    "id": 318,
+                    "id": 79,
                     "name": "VariableDeclarationStatement",
-                    "src": "892:55:2"
+                    "src": "996:55:0"
                   },
                   {
                     "attributes": {
                       "assignments": [
-                        320
+                        81
                       ]
                     },
                     "children": [
@@ -1092,7 +1202,7 @@
                         "attributes": {
                           "constant": false,
                           "name": "sender",
-                          "scope": 374,
+                          "scope": 135,
                           "stateVariable": false,
                           "storageLocation": "storage",
                           "type": "struct Publisher.Reviewer storage pointer",
@@ -1104,17 +1214,17 @@
                             "attributes": {
                               "contractScope": null,
                               "name": "Reviewer",
-                              "referencedDeclaration": 257,
+                              "referencedDeclaration": 10,
                               "type": "struct Publisher.Reviewer storage pointer"
                             },
-                            "id": 319,
+                            "id": 80,
                             "name": "UserDefinedTypeName",
-                            "src": "954:8:2"
+                            "src": "1058:8:0"
                           }
                         ],
-                        "id": 320,
+                        "id": 81,
                         "name": "VariableDeclaration",
-                        "src": "954:23:2"
+                        "src": "1058:23:0"
                       },
                       {
                         "attributes": {
@@ -1134,7 +1244,7 @@
                               "isPure": false,
                               "lValueRequested": false,
                               "member_name": "reviewers",
-                              "referencedDeclaration": 273,
+                              "referencedDeclaration": 26,
                               "type": "mapping(address => struct Publisher.Reviewer storage ref)"
                             },
                             "children": [
@@ -1144,18 +1254,18 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 314,
+                                  "referencedDeclaration": 75,
                                   "type": "struct Publisher.Publication storage pointer",
                                   "value": "paper"
                                 },
-                                "id": 321,
+                                "id": 82,
                                 "name": "Identifier",
-                                "src": "980:5:2"
+                                "src": "1084:5:0"
                               }
                             ],
-                            "id": 322,
+                            "id": 83,
                             "name": "MemberAccess",
-                            "src": "980:15:2"
+                            "src": "1084:15:0"
                           },
                           {
                             "attributes": {
@@ -1175,28 +1285,28 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 474,
+                                  "referencedDeclaration": 235,
                                   "type": "msg",
                                   "value": "msg"
                                 },
-                                "id": 323,
+                                "id": 84,
                                 "name": "Identifier",
-                                "src": "996:3:2"
+                                "src": "1100:3:0"
                               }
                             ],
-                            "id": 324,
+                            "id": 85,
                             "name": "MemberAccess",
-                            "src": "996:10:2"
+                            "src": "1100:10:0"
                           }
                         ],
-                        "id": 325,
+                        "id": 86,
                         "name": "IndexAccess",
-                        "src": "980:27:2"
+                        "src": "1084:27:0"
                       }
                     ],
-                    "id": 326,
+                    "id": 87,
                     "name": "VariableDeclarationStatement",
-                    "src": "954:53:2"
+                    "src": "1058:53:0"
                   },
                   {
                     "attributes": {
@@ -1226,7 +1336,7 @@
                               "isPure": false,
                               "lValueRequested": false,
                               "member_name": "voted",
-                              "referencedDeclaration": 256,
+                              "referencedDeclaration": 9,
                               "type": "bool"
                             },
                             "children": [
@@ -1236,18 +1346,18 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 320,
+                                  "referencedDeclaration": 81,
                                   "type": "struct Publisher.Reviewer storage pointer",
                                   "value": "sender"
                                 },
-                                "id": 327,
+                                "id": 88,
                                 "name": "Identifier",
-                                "src": "1019:6:2"
+                                "src": "1123:6:0"
                               }
                             ],
-                            "id": 328,
+                            "id": 89,
                             "name": "MemberAccess",
-                            "src": "1019:12:2"
+                            "src": "1123:12:0"
                           },
                           {
                             "attributes": {
@@ -1272,7 +1382,7 @@
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "member_name": "author",
-                                  "referencedDeclaration": 259,
+                                  "referencedDeclaration": 12,
                                   "type": "address"
                                 },
                                 "children": [
@@ -1282,18 +1392,18 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 314,
+                                      "referencedDeclaration": 75,
                                       "type": "struct Publisher.Publication storage pointer",
                                       "value": "paper"
                                     },
-                                    "id": 329,
+                                    "id": 90,
                                     "name": "Identifier",
-                                    "src": "1035:5:2"
+                                    "src": "1139:5:0"
                                   }
                                 ],
-                                "id": 330,
+                                "id": 91,
                                 "name": "MemberAccess",
-                                "src": "1035:12:2"
+                                "src": "1139:12:0"
                               },
                               {
                                 "attributes": {
@@ -1313,42 +1423,42 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 474,
+                                      "referencedDeclaration": 235,
                                       "type": "msg",
                                       "value": "msg"
                                     },
-                                    "id": 331,
+                                    "id": 92,
                                     "name": "Identifier",
-                                    "src": "1049:3:2"
+                                    "src": "1153:3:0"
                                   }
                                 ],
-                                "id": 332,
+                                "id": 93,
                                 "name": "MemberAccess",
-                                "src": "1049:10:2"
+                                "src": "1153:10:0"
                               }
                             ],
-                            "id": 333,
+                            "id": 94,
                             "name": "BinaryOperation",
-                            "src": "1035:24:2"
+                            "src": "1139:24:0"
                           }
                         ],
-                        "id": 334,
+                        "id": 95,
                         "name": "BinaryOperation",
-                        "src": "1019:40:2"
+                        "src": "1123:40:0"
                       },
                       {
                         "attributes": {
                           "expression": null,
-                          "functionReturnParameters": 312
+                          "functionReturnParameters": 73
                         },
-                        "id": 335,
+                        "id": 96,
                         "name": "Return",
-                        "src": "1062:7:2"
+                        "src": "1166:7:0"
                       }
                     ],
-                    "id": 336,
+                    "id": 97,
                     "name": "IfStatement",
-                    "src": "1015:54:2"
+                    "src": "1119:54:0"
                   },
                   {
                     "children": [
@@ -1381,7 +1491,7 @@
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "member_name": "reviewers",
-                                  "referencedDeclaration": 273,
+                                  "referencedDeclaration": 26,
                                   "type": "mapping(address => struct Publisher.Reviewer storage ref)"
                                 },
                                 "children": [
@@ -1391,18 +1501,18 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 314,
+                                      "referencedDeclaration": 75,
                                       "type": "struct Publisher.Publication storage pointer",
                                       "value": "paper"
                                     },
-                                    "id": 337,
+                                    "id": 98,
                                     "name": "Identifier",
-                                    "src": "1075:5:2"
+                                    "src": "1179:5:0"
                                   }
                                 ],
-                                "id": 341,
+                                "id": 102,
                                 "name": "MemberAccess",
-                                "src": "1075:15:2"
+                                "src": "1179:15:0"
                               },
                               {
                                 "attributes": {
@@ -1422,23 +1532,23 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 474,
+                                      "referencedDeclaration": 235,
                                       "type": "msg",
                                       "value": "msg"
                                     },
-                                    "id": 339,
+                                    "id": 100,
                                     "name": "Identifier",
-                                    "src": "1091:3:2"
+                                    "src": "1195:3:0"
                                   }
                                 ],
-                                "id": 340,
+                                "id": 101,
                                 "name": "MemberAccess",
-                                "src": "1091:10:2"
+                                "src": "1195:10:0"
                               }
                             ],
-                            "id": 342,
+                            "id": 103,
                             "name": "IndexAccess",
-                            "src": "1075:27:2"
+                            "src": "1179:27:0"
                           },
                           {
                             "attributes": {
@@ -1462,13 +1572,13 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 257,
+                                  "referencedDeclaration": 10,
                                   "type": "type(struct Publisher.Reviewer storage pointer)",
                                   "value": "Reviewer"
                                 },
-                                "id": 343,
+                                "id": 104,
                                 "name": "Identifier",
-                                "src": "1105:8:2"
+                                "src": "1209:8:0"
                               },
                               {
                                 "attributes": {
@@ -1488,18 +1598,18 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 474,
+                                      "referencedDeclaration": 235,
                                       "type": "msg",
                                       "value": "msg"
                                     },
-                                    "id": 344,
+                                    "id": 105,
                                     "name": "Identifier",
-                                    "src": "1121:3:2"
+                                    "src": "1225:3:0"
                                   }
                                 ],
-                                "id": 345,
+                                "id": 106,
                                 "name": "MemberAccess",
-                                "src": "1121:10:2"
+                                "src": "1225:10:0"
                               },
                               {
                                 "attributes": {
@@ -1514,24 +1624,24 @@
                                   "type": "bool",
                                   "value": "true"
                                 },
-                                "id": 346,
+                                "id": 107,
                                 "name": "Literal",
-                                "src": "1138:4:2"
+                                "src": "1242:4:0"
                               }
                             ],
-                            "id": 347,
+                            "id": 108,
                             "name": "FunctionCall",
-                            "src": "1105:39:2"
+                            "src": "1209:39:0"
                           }
                         ],
-                        "id": 348,
+                        "id": 109,
                         "name": "Assignment",
-                        "src": "1075:69:2"
+                        "src": "1179:69:0"
                       }
                     ],
-                    "id": 349,
+                    "id": 110,
                     "name": "ExpressionStatement",
-                    "src": "1075:69:2"
+                    "src": "1179:69:0"
                   },
                   {
                     "children": [
@@ -1555,7 +1665,7 @@
                               "isPure": false,
                               "lValueRequested": true,
                               "member_name": "numReviewers",
-                              "referencedDeclaration": 263,
+                              "referencedDeclaration": 16,
                               "type": "uint256"
                             },
                             "children": [
@@ -1565,28 +1675,28 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 314,
+                                  "referencedDeclaration": 75,
                                   "type": "struct Publisher.Publication storage pointer",
                                   "value": "paper"
                                 },
-                                "id": 350,
+                                "id": 111,
                                 "name": "Identifier",
-                                "src": "1152:5:2"
+                                "src": "1256:5:0"
                               }
                             ],
-                            "id": 352,
+                            "id": 113,
                             "name": "MemberAccess",
-                            "src": "1152:18:2"
+                            "src": "1256:18:0"
                           }
                         ],
-                        "id": 353,
+                        "id": 114,
                         "name": "UnaryOperation",
-                        "src": "1152:20:2"
+                        "src": "1256:20:0"
                       }
                     ],
-                    "id": 354,
+                    "id": 115,
                     "name": "ExpressionStatement",
-                    "src": "1152:20:2"
+                    "src": "1256:20:0"
                   },
                   {
                     "children": [
@@ -1610,7 +1720,7 @@
                               "isPure": false,
                               "lValueRequested": true,
                               "member_name": "validatedVoteCount",
-                              "referencedDeclaration": 267,
+                              "referencedDeclaration": 20,
                               "type": "uint256"
                             },
                             "children": [
@@ -1620,28 +1730,28 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 314,
+                                  "referencedDeclaration": 75,
                                   "type": "struct Publisher.Publication storage pointer",
                                   "value": "paper"
                                 },
-                                "id": 355,
+                                "id": 116,
                                 "name": "Identifier",
-                                "src": "1179:5:2"
+                                "src": "1283:5:0"
                               }
                             ],
-                            "id": 357,
+                            "id": 118,
                             "name": "MemberAccess",
-                            "src": "1179:24:2"
+                            "src": "1283:24:0"
                           }
                         ],
-                        "id": 358,
+                        "id": 119,
                         "name": "UnaryOperation",
-                        "src": "1179:26:2"
+                        "src": "1283:26:0"
                       }
                     ],
-                    "id": 359,
+                    "id": 120,
                     "name": "ExpressionStatement",
-                    "src": "1179:26:2"
+                    "src": "1283:26:0"
                   },
                   {
                     "attributes": {
@@ -1671,7 +1781,7 @@
                               "isPure": false,
                               "lValueRequested": false,
                               "member_name": "validatedVoteCount",
-                              "referencedDeclaration": 267,
+                              "referencedDeclaration": 20,
                               "type": "uint256"
                             },
                             "children": [
@@ -1681,18 +1791,18 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 314,
+                                  "referencedDeclaration": 75,
                                   "type": "struct Publisher.Publication storage pointer",
                                   "value": "paper"
                                 },
-                                "id": 360,
+                                "id": 121,
                                 "name": "Identifier",
-                                "src": "1216:5:2"
+                                "src": "1320:5:0"
                               }
                             ],
-                            "id": 361,
+                            "id": 122,
                             "name": "MemberAccess",
-                            "src": "1216:24:2"
+                            "src": "1320:24:0"
                           },
                           {
                             "attributes": {
@@ -1707,14 +1817,14 @@
                               "type": "int_const 3",
                               "value": "3"
                             },
-                            "id": 362,
+                            "id": 123,
                             "name": "Literal",
-                            "src": "1241:1:2"
+                            "src": "1345:1:0"
                           }
                         ],
-                        "id": 363,
+                        "id": 124,
                         "name": "BinaryOperation",
-                        "src": "1216:26:2"
+                        "src": "1320:26:0"
                       },
                       {
                         "children": [
@@ -1739,7 +1849,7 @@
                                       "isPure": false,
                                       "lValueRequested": true,
                                       "member_name": "state",
-                                      "referencedDeclaration": 265,
+                                      "referencedDeclaration": 18,
                                       "type": "enum Publisher.State"
                                     },
                                     "children": [
@@ -1749,18 +1859,18 @@
                                           "overloadedDeclarations": [
                                             null
                                           ],
-                                          "referencedDeclaration": 314,
+                                          "referencedDeclaration": 75,
                                           "type": "struct Publisher.Publication storage pointer",
                                           "value": "paper"
                                         },
-                                        "id": 364,
+                                        "id": 125,
                                         "name": "Identifier",
-                                        "src": "1253:5:2"
+                                        "src": "1357:5:0"
                                       }
                                     ],
-                                    "id": 366,
+                                    "id": 127,
                                     "name": "MemberAccess",
-                                    "src": "1253:11:2"
+                                    "src": "1357:11:0"
                                   },
                                   {
                                     "attributes": {
@@ -1780,48 +1890,48 @@
                                           "overloadedDeclarations": [
                                             null
                                           ],
-                                          "referencedDeclaration": 252,
+                                          "referencedDeclaration": 5,
                                           "type": "type(enum Publisher.State)",
                                           "value": "State"
                                         },
-                                        "id": 367,
+                                        "id": 128,
                                         "name": "Identifier",
-                                        "src": "1267:5:2"
+                                        "src": "1371:5:0"
                                       }
                                     ],
-                                    "id": 368,
+                                    "id": 129,
                                     "name": "MemberAccess",
-                                    "src": "1267:15:2"
+                                    "src": "1371:15:0"
                                   }
                                 ],
-                                "id": 369,
+                                "id": 130,
                                 "name": "Assignment",
-                                "src": "1253:29:2"
+                                "src": "1357:29:0"
                               }
                             ],
-                            "id": 370,
+                            "id": 131,
                             "name": "ExpressionStatement",
-                            "src": "1253:29:2"
+                            "src": "1357:29:0"
                           }
                         ],
-                        "id": 371,
+                        "id": 132,
                         "name": "Block",
-                        "src": "1243:47:2"
+                        "src": "1347:47:0"
                       }
                     ],
-                    "id": 372,
+                    "id": 133,
                     "name": "IfStatement",
-                    "src": "1213:77:2"
+                    "src": "1317:77:0"
                   }
                 ],
-                "id": 373,
+                "id": 134,
                 "name": "Block",
-                "src": "884:412:2"
+                "src": "988:412:0"
               }
             ],
-            "id": 374,
+            "id": 135,
             "name": "FunctionDefinition",
-            "src": "833:463:2"
+            "src": "937:463:0"
           },
           {
             "attributes": {
@@ -1833,7 +1943,7 @@
               ],
               "name": "rejectArticle",
               "payable": false,
-              "scope": 462,
+              "scope": 223,
               "stateMutability": "nonpayable",
               "superFunction": null,
               "visibility": "public"
@@ -1845,7 +1955,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "publicationID",
-                      "scope": 427,
+                      "scope": 188,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -1858,19 +1968,19 @@
                           "name": "uint",
                           "type": "uint256"
                         },
-                        "id": 375,
+                        "id": 136,
                         "name": "ElementaryTypeName",
-                        "src": "1325:4:2"
+                        "src": "1429:4:0"
                       }
                     ],
-                    "id": 376,
+                    "id": 137,
                     "name": "VariableDeclaration",
-                    "src": "1325:18:2"
+                    "src": "1429:18:0"
                   }
                 ],
-                "id": 377,
+                "id": 138,
                 "name": "ParameterList",
-                "src": "1324:20:2"
+                "src": "1428:20:0"
               },
               {
                 "attributes": {
@@ -1879,16 +1989,16 @@
                   ]
                 },
                 "children": [],
-                "id": 378,
+                "id": 139,
                 "name": "ParameterList",
-                "src": "1351:0:2"
+                "src": "1455:0:0"
               },
               {
                 "children": [
                   {
                     "attributes": {
                       "assignments": [
-                        380
+                        141
                       ]
                     },
                     "children": [
@@ -1896,7 +2006,7 @@
                         "attributes": {
                           "constant": false,
                           "name": "paper",
-                          "scope": 427,
+                          "scope": 188,
                           "stateVariable": false,
                           "storageLocation": "storage",
                           "type": "struct Publisher.Publication storage pointer",
@@ -1908,17 +2018,17 @@
                             "attributes": {
                               "contractScope": null,
                               "name": "Publication",
-                              "referencedDeclaration": 274,
+                              "referencedDeclaration": 27,
                               "type": "struct Publisher.Publication storage pointer"
                             },
-                            "id": 379,
+                            "id": 140,
                             "name": "UserDefinedTypeName",
-                            "src": "1359:11:2"
+                            "src": "1463:11:0"
                           }
                         ],
-                        "id": 380,
+                        "id": 141,
                         "name": "VariableDeclaration",
-                        "src": "1359:25:2"
+                        "src": "1463:25:0"
                       },
                       {
                         "attributes": {
@@ -1936,13 +2046,13 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 280,
+                              "referencedDeclaration": 33,
                               "type": "mapping(uint256 => struct Publisher.Publication storage ref)",
                               "value": "publications"
                             },
-                            "id": 381,
+                            "id": 142,
                             "name": "Identifier",
-                            "src": "1387:12:2"
+                            "src": "1491:12:0"
                           },
                           {
                             "attributes": {
@@ -1950,28 +2060,28 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 376,
+                              "referencedDeclaration": 137,
                               "type": "uint256",
                               "value": "publicationID"
                             },
-                            "id": 382,
+                            "id": 143,
                             "name": "Identifier",
-                            "src": "1400:13:2"
+                            "src": "1504:13:0"
                           }
                         ],
-                        "id": 383,
+                        "id": 144,
                         "name": "IndexAccess",
-                        "src": "1387:27:2"
+                        "src": "1491:27:0"
                       }
                     ],
-                    "id": 384,
+                    "id": 145,
                     "name": "VariableDeclarationStatement",
-                    "src": "1359:55:2"
+                    "src": "1463:55:0"
                   },
                   {
                     "attributes": {
                       "assignments": [
-                        386
+                        147
                       ]
                     },
                     "children": [
@@ -1979,7 +2089,7 @@
                         "attributes": {
                           "constant": false,
                           "name": "sender",
-                          "scope": 427,
+                          "scope": 188,
                           "stateVariable": false,
                           "storageLocation": "storage",
                           "type": "struct Publisher.Reviewer storage pointer",
@@ -1991,17 +2101,17 @@
                             "attributes": {
                               "contractScope": null,
                               "name": "Reviewer",
-                              "referencedDeclaration": 257,
+                              "referencedDeclaration": 10,
                               "type": "struct Publisher.Reviewer storage pointer"
                             },
-                            "id": 385,
+                            "id": 146,
                             "name": "UserDefinedTypeName",
-                            "src": "1421:8:2"
+                            "src": "1525:8:0"
                           }
                         ],
-                        "id": 386,
+                        "id": 147,
                         "name": "VariableDeclaration",
-                        "src": "1421:23:2"
+                        "src": "1525:23:0"
                       },
                       {
                         "attributes": {
@@ -2021,7 +2131,7 @@
                               "isPure": false,
                               "lValueRequested": false,
                               "member_name": "reviewers",
-                              "referencedDeclaration": 273,
+                              "referencedDeclaration": 26,
                               "type": "mapping(address => struct Publisher.Reviewer storage ref)"
                             },
                             "children": [
@@ -2031,18 +2141,18 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 380,
+                                  "referencedDeclaration": 141,
                                   "type": "struct Publisher.Publication storage pointer",
                                   "value": "paper"
                                 },
-                                "id": 387,
+                                "id": 148,
                                 "name": "Identifier",
-                                "src": "1447:5:2"
+                                "src": "1551:5:0"
                               }
                             ],
-                            "id": 388,
+                            "id": 149,
                             "name": "MemberAccess",
-                            "src": "1447:15:2"
+                            "src": "1551:15:0"
                           },
                           {
                             "attributes": {
@@ -2062,28 +2172,28 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 474,
+                                  "referencedDeclaration": 235,
                                   "type": "msg",
                                   "value": "msg"
                                 },
-                                "id": 389,
+                                "id": 150,
                                 "name": "Identifier",
-                                "src": "1463:3:2"
+                                "src": "1567:3:0"
                               }
                             ],
-                            "id": 390,
+                            "id": 151,
                             "name": "MemberAccess",
-                            "src": "1463:10:2"
+                            "src": "1567:10:0"
                           }
                         ],
-                        "id": 391,
+                        "id": 152,
                         "name": "IndexAccess",
-                        "src": "1447:27:2"
+                        "src": "1551:27:0"
                       }
                     ],
-                    "id": 392,
+                    "id": 153,
                     "name": "VariableDeclarationStatement",
-                    "src": "1421:53:2"
+                    "src": "1525:53:0"
                   },
                   {
                     "attributes": {
@@ -2113,7 +2223,7 @@
                               "isPure": false,
                               "lValueRequested": false,
                               "member_name": "voted",
-                              "referencedDeclaration": 256,
+                              "referencedDeclaration": 9,
                               "type": "bool"
                             },
                             "children": [
@@ -2123,18 +2233,18 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 386,
+                                  "referencedDeclaration": 147,
                                   "type": "struct Publisher.Reviewer storage pointer",
                                   "value": "sender"
                                 },
-                                "id": 393,
+                                "id": 154,
                                 "name": "Identifier",
-                                "src": "1486:6:2"
+                                "src": "1590:6:0"
                               }
                             ],
-                            "id": 394,
+                            "id": 155,
                             "name": "MemberAccess",
-                            "src": "1486:12:2"
+                            "src": "1590:12:0"
                           },
                           {
                             "attributes": {
@@ -2159,7 +2269,7 @@
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "member_name": "author",
-                                  "referencedDeclaration": 259,
+                                  "referencedDeclaration": 12,
                                   "type": "address"
                                 },
                                 "children": [
@@ -2169,18 +2279,18 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 380,
+                                      "referencedDeclaration": 141,
                                       "type": "struct Publisher.Publication storage pointer",
                                       "value": "paper"
                                     },
-                                    "id": 395,
+                                    "id": 156,
                                     "name": "Identifier",
-                                    "src": "1502:5:2"
+                                    "src": "1606:5:0"
                                   }
                                 ],
-                                "id": 396,
+                                "id": 157,
                                 "name": "MemberAccess",
-                                "src": "1502:12:2"
+                                "src": "1606:12:0"
                               },
                               {
                                 "attributes": {
@@ -2200,42 +2310,42 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 474,
+                                      "referencedDeclaration": 235,
                                       "type": "msg",
                                       "value": "msg"
                                     },
-                                    "id": 397,
+                                    "id": 158,
                                     "name": "Identifier",
-                                    "src": "1516:3:2"
+                                    "src": "1620:3:0"
                                   }
                                 ],
-                                "id": 398,
+                                "id": 159,
                                 "name": "MemberAccess",
-                                "src": "1516:10:2"
+                                "src": "1620:10:0"
                               }
                             ],
-                            "id": 399,
+                            "id": 160,
                             "name": "BinaryOperation",
-                            "src": "1502:24:2"
+                            "src": "1606:24:0"
                           }
                         ],
-                        "id": 400,
+                        "id": 161,
                         "name": "BinaryOperation",
-                        "src": "1486:40:2"
+                        "src": "1590:40:0"
                       },
                       {
                         "attributes": {
                           "expression": null,
-                          "functionReturnParameters": 378
+                          "functionReturnParameters": 139
                         },
-                        "id": 401,
+                        "id": 162,
                         "name": "Return",
-                        "src": "1529:7:2"
+                        "src": "1633:7:0"
                       }
                     ],
-                    "id": 402,
+                    "id": 163,
                     "name": "IfStatement",
-                    "src": "1482:54:2"
+                    "src": "1586:54:0"
                   },
                   {
                     "children": [
@@ -2268,7 +2378,7 @@
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "member_name": "reviewers",
-                                  "referencedDeclaration": 273,
+                                  "referencedDeclaration": 26,
                                   "type": "mapping(address => struct Publisher.Reviewer storage ref)"
                                 },
                                 "children": [
@@ -2278,18 +2388,18 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 380,
+                                      "referencedDeclaration": 141,
                                       "type": "struct Publisher.Publication storage pointer",
                                       "value": "paper"
                                     },
-                                    "id": 403,
+                                    "id": 164,
                                     "name": "Identifier",
-                                    "src": "1542:5:2"
+                                    "src": "1646:5:0"
                                   }
                                 ],
-                                "id": 407,
+                                "id": 168,
                                 "name": "MemberAccess",
-                                "src": "1542:15:2"
+                                "src": "1646:15:0"
                               },
                               {
                                 "attributes": {
@@ -2309,23 +2419,23 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 474,
+                                      "referencedDeclaration": 235,
                                       "type": "msg",
                                       "value": "msg"
                                     },
-                                    "id": 405,
+                                    "id": 166,
                                     "name": "Identifier",
-                                    "src": "1558:3:2"
+                                    "src": "1662:3:0"
                                   }
                                 ],
-                                "id": 406,
+                                "id": 167,
                                 "name": "MemberAccess",
-                                "src": "1558:10:2"
+                                "src": "1662:10:0"
                               }
                             ],
-                            "id": 408,
+                            "id": 169,
                             "name": "IndexAccess",
-                            "src": "1542:27:2"
+                            "src": "1646:27:0"
                           },
                           {
                             "attributes": {
@@ -2349,13 +2459,13 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 257,
+                                  "referencedDeclaration": 10,
                                   "type": "type(struct Publisher.Reviewer storage pointer)",
                                   "value": "Reviewer"
                                 },
-                                "id": 409,
+                                "id": 170,
                                 "name": "Identifier",
-                                "src": "1572:8:2"
+                                "src": "1676:8:0"
                               },
                               {
                                 "attributes": {
@@ -2375,18 +2485,18 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 474,
+                                      "referencedDeclaration": 235,
                                       "type": "msg",
                                       "value": "msg"
                                     },
-                                    "id": 410,
+                                    "id": 171,
                                     "name": "Identifier",
-                                    "src": "1588:3:2"
+                                    "src": "1692:3:0"
                                   }
                                 ],
-                                "id": 411,
+                                "id": 172,
                                 "name": "MemberAccess",
-                                "src": "1588:10:2"
+                                "src": "1692:10:0"
                               },
                               {
                                 "attributes": {
@@ -2401,24 +2511,24 @@
                                   "type": "bool",
                                   "value": "true"
                                 },
-                                "id": 412,
+                                "id": 173,
                                 "name": "Literal",
-                                "src": "1605:4:2"
+                                "src": "1709:4:0"
                               }
                             ],
-                            "id": 413,
+                            "id": 174,
                             "name": "FunctionCall",
-                            "src": "1572:39:2"
+                            "src": "1676:39:0"
                           }
                         ],
-                        "id": 414,
+                        "id": 175,
                         "name": "Assignment",
-                        "src": "1542:69:2"
+                        "src": "1646:69:0"
                       }
                     ],
-                    "id": 415,
+                    "id": 176,
                     "name": "ExpressionStatement",
-                    "src": "1542:69:2"
+                    "src": "1646:69:0"
                   },
                   {
                     "children": [
@@ -2442,7 +2552,7 @@
                               "isPure": false,
                               "lValueRequested": true,
                               "member_name": "numReviewers",
-                              "referencedDeclaration": 263,
+                              "referencedDeclaration": 16,
                               "type": "uint256"
                             },
                             "children": [
@@ -2452,28 +2562,28 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 380,
+                                  "referencedDeclaration": 141,
                                   "type": "struct Publisher.Publication storage pointer",
                                   "value": "paper"
                                 },
-                                "id": 416,
+                                "id": 177,
                                 "name": "Identifier",
-                                "src": "1619:5:2"
+                                "src": "1723:5:0"
                               }
                             ],
-                            "id": 418,
+                            "id": 179,
                             "name": "MemberAccess",
-                            "src": "1619:18:2"
+                            "src": "1723:18:0"
                           }
                         ],
-                        "id": 419,
+                        "id": 180,
                         "name": "UnaryOperation",
-                        "src": "1619:20:2"
+                        "src": "1723:20:0"
                       }
                     ],
-                    "id": 420,
+                    "id": 181,
                     "name": "ExpressionStatement",
-                    "src": "1619:20:2"
+                    "src": "1723:20:0"
                   },
                   {
                     "children": [
@@ -2497,7 +2607,7 @@
                               "isPure": false,
                               "lValueRequested": true,
                               "member_name": "rejectedVoteCount",
-                              "referencedDeclaration": 269,
+                              "referencedDeclaration": 22,
                               "type": "uint256"
                             },
                             "children": [
@@ -2507,38 +2617,38 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 380,
+                                  "referencedDeclaration": 141,
                                   "type": "struct Publisher.Publication storage pointer",
                                   "value": "paper"
                                 },
-                                "id": 421,
+                                "id": 182,
                                 "name": "Identifier",
-                                "src": "1646:5:2"
+                                "src": "1750:5:0"
                               }
                             ],
-                            "id": 423,
+                            "id": 184,
                             "name": "MemberAccess",
-                            "src": "1646:23:2"
+                            "src": "1750:23:0"
                           }
                         ],
-                        "id": 424,
+                        "id": 185,
                         "name": "UnaryOperation",
-                        "src": "1646:25:2"
+                        "src": "1750:25:0"
                       }
                     ],
-                    "id": 425,
+                    "id": 186,
                     "name": "ExpressionStatement",
-                    "src": "1646:25:2"
+                    "src": "1750:25:0"
                   }
                 ],
-                "id": 426,
+                "id": 187,
                 "name": "Block",
-                "src": "1351:328:2"
+                "src": "1455:328:0"
               }
             ],
-            "id": 427,
+            "id": 188,
             "name": "FunctionDefinition",
-            "src": "1302:377:2"
+            "src": "1406:377:0"
           },
           {
             "attributes": {
@@ -2550,7 +2660,7 @@
               ],
               "name": "getValidatedVoteCount",
               "payable": false,
-              "scope": 462,
+              "scope": 223,
               "stateMutability": "view",
               "superFunction": null,
               "visibility": "public"
@@ -2562,7 +2672,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "publicationID",
-                      "scope": 444,
+                      "scope": 205,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -2575,19 +2685,19 @@
                           "name": "uint",
                           "type": "uint256"
                         },
-                        "id": 428,
+                        "id": 189,
                         "name": "ElementaryTypeName",
-                        "src": "1716:4:2"
+                        "src": "1820:4:0"
                       }
                     ],
-                    "id": 429,
+                    "id": 190,
                     "name": "VariableDeclaration",
-                    "src": "1716:18:2"
+                    "src": "1820:18:0"
                   }
                 ],
-                "id": 430,
+                "id": 191,
                 "name": "ParameterList",
-                "src": "1715:20:2"
+                "src": "1819:20:0"
               },
               {
                 "children": [
@@ -2595,7 +2705,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "",
-                      "scope": 444,
+                      "scope": 205,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -2608,26 +2718,26 @@
                           "name": "uint",
                           "type": "uint256"
                         },
-                        "id": 431,
+                        "id": 192,
                         "name": "ElementaryTypeName",
-                        "src": "1760:4:2"
+                        "src": "1864:4:0"
                       }
                     ],
-                    "id": 432,
+                    "id": 193,
                     "name": "VariableDeclaration",
-                    "src": "1760:4:2"
+                    "src": "1864:4:0"
                   }
                 ],
-                "id": 433,
+                "id": 194,
                 "name": "ParameterList",
-                "src": "1759:6:2"
+                "src": "1863:6:0"
               },
               {
                 "children": [
                   {
                     "attributes": {
                       "assignments": [
-                        435
+                        196
                       ]
                     },
                     "children": [
@@ -2635,7 +2745,7 @@
                         "attributes": {
                           "constant": false,
                           "name": "paper",
-                          "scope": 444,
+                          "scope": 205,
                           "stateVariable": false,
                           "storageLocation": "storage",
                           "type": "struct Publisher.Publication storage pointer",
@@ -2647,17 +2757,17 @@
                             "attributes": {
                               "contractScope": null,
                               "name": "Publication",
-                              "referencedDeclaration": 274,
+                              "referencedDeclaration": 27,
                               "type": "struct Publisher.Publication storage pointer"
                             },
-                            "id": 434,
+                            "id": 195,
                             "name": "UserDefinedTypeName",
-                            "src": "1773:11:2"
+                            "src": "1877:11:0"
                           }
                         ],
-                        "id": 435,
+                        "id": 196,
                         "name": "VariableDeclaration",
-                        "src": "1773:25:2"
+                        "src": "1877:25:0"
                       },
                       {
                         "attributes": {
@@ -2675,13 +2785,13 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 280,
+                              "referencedDeclaration": 33,
                               "type": "mapping(uint256 => struct Publisher.Publication storage ref)",
                               "value": "publications"
                             },
-                            "id": 436,
+                            "id": 197,
                             "name": "Identifier",
-                            "src": "1801:12:2"
+                            "src": "1905:12:0"
                           },
                           {
                             "attributes": {
@@ -2689,27 +2799,27 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 429,
+                              "referencedDeclaration": 190,
                               "type": "uint256",
                               "value": "publicationID"
                             },
-                            "id": 437,
+                            "id": 198,
                             "name": "Identifier",
-                            "src": "1814:13:2"
+                            "src": "1918:13:0"
                           }
                         ],
-                        "id": 438,
+                        "id": 199,
                         "name": "IndexAccess",
-                        "src": "1801:27:2"
+                        "src": "1905:27:0"
                       }
                     ],
-                    "id": 439,
+                    "id": 200,
                     "name": "VariableDeclarationStatement",
-                    "src": "1773:55:2"
+                    "src": "1877:55:0"
                   },
                   {
                     "attributes": {
-                      "functionReturnParameters": 433
+                      "functionReturnParameters": 194
                     },
                     "children": [
                       {
@@ -2720,7 +2830,7 @@
                           "isPure": false,
                           "lValueRequested": false,
                           "member_name": "validatedVoteCount",
-                          "referencedDeclaration": 267,
+                          "referencedDeclaration": 20,
                           "type": "uint256"
                         },
                         "children": [
@@ -2730,33 +2840,33 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 435,
+                              "referencedDeclaration": 196,
                               "type": "struct Publisher.Publication storage pointer",
                               "value": "paper"
                             },
-                            "id": 440,
+                            "id": 201,
                             "name": "Identifier",
-                            "src": "1843:5:2"
+                            "src": "1947:5:0"
                           }
                         ],
-                        "id": 441,
+                        "id": 202,
                         "name": "MemberAccess",
-                        "src": "1843:24:2"
+                        "src": "1947:24:0"
                       }
                     ],
-                    "id": 442,
+                    "id": 203,
                     "name": "Return",
-                    "src": "1836:31:2"
+                    "src": "1940:31:0"
                   }
                 ],
-                "id": 443,
+                "id": 204,
                 "name": "Block",
-                "src": "1765:109:2"
+                "src": "1869:109:0"
               }
             ],
-            "id": 444,
+            "id": 205,
             "name": "FunctionDefinition",
-            "src": "1685:189:2"
+            "src": "1789:189:0"
           },
           {
             "attributes": {
@@ -2768,7 +2878,7 @@
               ],
               "name": "getStatusArticle",
               "payable": false,
-              "scope": 462,
+              "scope": 223,
               "stateMutability": "view",
               "superFunction": null,
               "visibility": "public"
@@ -2780,7 +2890,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "publicationID",
-                      "scope": 461,
+                      "scope": 222,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -2793,19 +2903,19 @@
                           "name": "uint",
                           "type": "uint256"
                         },
-                        "id": 445,
+                        "id": 206,
                         "name": "ElementaryTypeName",
-                        "src": "1905:4:2"
+                        "src": "2009:4:0"
                       }
                     ],
-                    "id": 446,
+                    "id": 207,
                     "name": "VariableDeclaration",
-                    "src": "1905:18:2"
+                    "src": "2009:18:0"
                   }
                 ],
-                "id": 447,
+                "id": 208,
                 "name": "ParameterList",
-                "src": "1904:20:2"
+                "src": "2008:20:0"
               },
               {
                 "children": [
@@ -2813,7 +2923,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "",
-                      "scope": 461,
+                      "scope": 222,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "enum Publisher.State",
@@ -2825,29 +2935,29 @@
                         "attributes": {
                           "contractScope": null,
                           "name": "State",
-                          "referencedDeclaration": 252,
+                          "referencedDeclaration": 5,
                           "type": "enum Publisher.State"
                         },
-                        "id": 448,
+                        "id": 209,
                         "name": "UserDefinedTypeName",
-                        "src": "1949:5:2"
+                        "src": "2053:5:0"
                       }
                     ],
-                    "id": 449,
+                    "id": 210,
                     "name": "VariableDeclaration",
-                    "src": "1949:5:2"
+                    "src": "2053:5:0"
                   }
                 ],
-                "id": 450,
+                "id": 211,
                 "name": "ParameterList",
-                "src": "1948:7:2"
+                "src": "2052:7:0"
               },
               {
                 "children": [
                   {
                     "attributes": {
                       "assignments": [
-                        452
+                        213
                       ]
                     },
                     "children": [
@@ -2855,7 +2965,7 @@
                         "attributes": {
                           "constant": false,
                           "name": "paper",
-                          "scope": 461,
+                          "scope": 222,
                           "stateVariable": false,
                           "storageLocation": "storage",
                           "type": "struct Publisher.Publication storage pointer",
@@ -2867,17 +2977,17 @@
                             "attributes": {
                               "contractScope": null,
                               "name": "Publication",
-                              "referencedDeclaration": 274,
+                              "referencedDeclaration": 27,
                               "type": "struct Publisher.Publication storage pointer"
                             },
-                            "id": 451,
+                            "id": 212,
                             "name": "UserDefinedTypeName",
-                            "src": "1963:11:2"
+                            "src": "2067:11:0"
                           }
                         ],
-                        "id": 452,
+                        "id": 213,
                         "name": "VariableDeclaration",
-                        "src": "1963:25:2"
+                        "src": "2067:25:0"
                       },
                       {
                         "attributes": {
@@ -2895,13 +3005,13 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 280,
+                              "referencedDeclaration": 33,
                               "type": "mapping(uint256 => struct Publisher.Publication storage ref)",
                               "value": "publications"
                             },
-                            "id": 453,
+                            "id": 214,
                             "name": "Identifier",
-                            "src": "1991:12:2"
+                            "src": "2095:12:0"
                           },
                           {
                             "attributes": {
@@ -2909,27 +3019,27 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 446,
+                              "referencedDeclaration": 207,
                               "type": "uint256",
                               "value": "publicationID"
                             },
-                            "id": 454,
+                            "id": 215,
                             "name": "Identifier",
-                            "src": "2004:13:2"
+                            "src": "2108:13:0"
                           }
                         ],
-                        "id": 455,
+                        "id": 216,
                         "name": "IndexAccess",
-                        "src": "1991:27:2"
+                        "src": "2095:27:0"
                       }
                     ],
-                    "id": 456,
+                    "id": 217,
                     "name": "VariableDeclarationStatement",
-                    "src": "1963:55:2"
+                    "src": "2067:55:0"
                   },
                   {
                     "attributes": {
-                      "functionReturnParameters": 450
+                      "functionReturnParameters": 211
                     },
                     "children": [
                       {
@@ -2940,7 +3050,7 @@
                           "isPure": false,
                           "lValueRequested": false,
                           "member_name": "state",
-                          "referencedDeclaration": 265,
+                          "referencedDeclaration": 18,
                           "type": "enum Publisher.State"
                         },
                         "children": [
@@ -2950,55 +3060,55 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 452,
+                              "referencedDeclaration": 213,
                               "type": "struct Publisher.Publication storage pointer",
                               "value": "paper"
                             },
-                            "id": 457,
+                            "id": 218,
                             "name": "Identifier",
-                            "src": "2033:5:2"
+                            "src": "2137:5:0"
                           }
                         ],
-                        "id": 458,
+                        "id": 219,
                         "name": "MemberAccess",
-                        "src": "2033:11:2"
+                        "src": "2137:11:0"
                       }
                     ],
-                    "id": 459,
+                    "id": 220,
                     "name": "Return",
-                    "src": "2026:18:2"
+                    "src": "2130:18:0"
                   }
                 ],
-                "id": 460,
+                "id": 221,
                 "name": "Block",
-                "src": "1955:96:2"
+                "src": "2059:96:0"
               }
             ],
-            "id": 461,
+            "id": 222,
             "name": "FunctionDefinition",
-            "src": "1879:172:2"
+            "src": "1983:172:0"
           }
         ],
-        "id": 462,
+        "id": 223,
         "name": "ContractDefinition",
-        "src": "24:2030:2"
+        "src": "24:2134:0"
       }
     ],
-    "id": 463,
+    "id": 224,
     "name": "SourceUnit",
-    "src": "0:2055:2"
+    "src": "0:2159:0"
   },
   "compiler": {
     "name": "solc",
     "version": "0.4.18+commit.9cf6e910.Emscripten.clang"
   },
   "networks": {
-    "1": {
+    "1511781804594": {
       "events": {},
       "links": {},
-      "address": "0xdd302bc314eea0cf55c6f0271e1abf8ff07b418e"
+      "address": "0x3c8bab139a37ecfa42c040a9bc1109cbbbed58ae"
     }
   },
   "schemaVersion": "1.0.1",
-  "updatedAt": "2017-11-27T08:40:46.881Z"
+  "updatedAt": "2017-11-27T11:30:43.784Z"
 }

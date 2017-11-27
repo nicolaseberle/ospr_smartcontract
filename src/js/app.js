@@ -4,6 +4,7 @@ App = {
 
   init: function() {
     // Load pets.
+    /*
     $.getJSON('../listArticles.json', function(data) {
       var petsRow = $('#petsRow');
       var petTemplate = $('#petTemplate');
@@ -13,13 +14,13 @@ App = {
         petTemplate.find('img').attr('src', data[i].picture);
         petTemplate.find('.pet-breed').text(data[i].breed);
         petTemplate.find('.pet-location').text(data[i].location);
+        petTemplate.find('.btn-edited').attr('data-id', data[i].id);
         petTemplate.find('.btn-submit').attr('data-id', data[i].id);
         petTemplate.find('.btn-validate').attr('data-id', data[i].id);
-
         petsRow.append(petTemplate.html());
       }
     });
-
+    */
     return App.initWeb3();
   },
 
@@ -34,7 +35,7 @@ App = {
           console.log("no injection of web3 instance");
       }
       web3 = new Web3(App.web3Provider);
-      return App.initContract();
+      return App.initPublisher();
   },
 
   initPublisher: function() {
@@ -55,37 +56,43 @@ App = {
   },
 
   bindEvents: function() {
-    $(document).on('click', '.btn-submite', App.handleSubmite);
+    $(document).on('click', '.btn-submite', App.handleSubmit);
     $(document).on('click', '.btn-validate', App.handleValidate);
   },
 
   markValidated: function(adopters, account) {
-    var adoptionInstance;
+    var publisherInstance;
 
     App.contracts.Publisher.deployed().then(function(instance) {
-	  adoptionInstance = instance;
+	  publisherInstance = instance;
 
-	  return adoptionInstance.getSubmitedArticles.call();
-      }).then(function(adopters) {
+	  return publisherInstance.getNumSubmitedArticles.call();
+  }).then(function(numPublication) {
 
-	  for (i = 0; i < adopters.length; i++) {
+    var petsRow = $('#petsRow');
+    var petTemplate = $('#petTemplate');
 
-	      if (adopters[i] !== '0x0000000000000000000000000000000000000000') {
-		        console.log("markSubmited");
-		  $('.panel-pet').eq(i).find('button').eq(0).text('Submit').attr('disabled', false);
-		  $('.panel-pet').eq(i).find('button').eq(1).text('Validate').attr('disabled', true);
-	      }
-	      else
-	      {
-		        console.log("markAbandoned");
-		  //s'il n'y a pas de proprio, on peut l'adopter
-		  $('.panel-pet').eq(i).find('button').eq(0).text('Submited').attr('disabled', true);
-		  $('.panel-pet').eq(i).find('button').eq(1).text('Validate').attr('disabled', false);
-	      }
-	  }
-      }).catch(function(err) {
-	  console.log(err.message);
-      });
+    for (i = 0; i <= numPublication.toString(); i++) {
+
+
+
+
+
+
+        petTemplate.find('.panel-title').text("Article " + i.toString());
+        petTemplate.find('img').attr('src', "images/image_2.png");
+        petsRow.append(petTemplate.html());
+
+
+
+      //$('.panel-pet').eq(i).find('button').eq(0).text('Edited').attr('disabled', false);
+      //$('.panel-pet').eq(i).find('button').eq(1).text('Submit').attr('disabled', false);
+		  //$('.panel-pet').eq(i).find('button').eq(2).text('Validate').attr('disabled', false);
+
+	    }
+    }).catch(function(err) {
+	     console.log(err.message);
+    });
   },
 
   handleValidate: function(event) {
@@ -110,7 +117,7 @@ App = {
 
 	// Execute adopt as a transaction by sending account
 	console.log("handleValidate::execute le contract de validation");
-	return publisherInstance.validateArticle(articleId,{from: account});
+	return publisherInstance.validateArticle(articleId);
     }).then(function(result) {
 	console.log("handleValidate : article validé");
 	console.log(result);
@@ -119,7 +126,43 @@ App = {
 	console.log(err.message);
     });
 });
+},
+
+
+
+
+handleSubmit: function(event) {
+  event.preventDefault();
+  console.log("handleSubmit");
+  var articleId = parseInt($(event.target).data('id'));
+  var publisherInstance;
+  console.log(articleId);
+  web3.eth.getAccounts(function(error, accounts) {
+  console.log("handleSubmit::getAccount");
+  if (error) {
+    console.log("handleSubmit::getAccount::error");
+    console.log(error);
   }
+
+  var account = accounts[0];
+  console.log(accounts);
+
+  console.log("handleSubmit::Publisher.deployed()");
+  App.contracts.Publisher.deployed().then(function(instance) {
+  publisherInstance = instance;
+
+  // Execute adopt as a transaction by sending account
+  console.log("handleSubmit::execute le contract de validation");
+  return publisherInstance.submitArticle();
+  }).then(function(result) {
+    console.log("handleSubmit : article soumis");
+    console.log(result);
+    return App.markValidated();
+    }).catch(function(err) {
+        console.log(err.message);
+      });
+  });
+}
 
 };
 

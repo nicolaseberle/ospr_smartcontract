@@ -720,7 +720,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 474,
+                                  "referencedDeclaration": 482,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -986,7 +986,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 476,
+                              "referencedDeclaration": 484,
                               "type": "uint256",
                               "value": "now"
                             },
@@ -1107,7 +1107,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 474,
+                                      "referencedDeclaration": 482,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -1352,7 +1352,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 474,
+                                  "referencedDeclaration": 482,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -1765,7 +1765,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 474,
+                                  "referencedDeclaration": 482,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -2453,7 +2453,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 474,
+                              "referencedDeclaration": 482,
                               "type": "msg",
                               "value": "msg"
                             },
@@ -2592,12 +2592,12 @@
     "version": "0.4.18+commit.9cf6e910.Emscripten.clang"
   },
   "networks": {
-    "1": {
+    "1511781804594": {
       "events": {},
       "links": {},
-      "address": "0x55e670dc7731e952bf144bb0835c7baa35a58c3c"
+      "address": "0x5684b06656898803ec369ee5b6f3ce0b535fdd81"
     }
   },
   "schemaVersion": "1.0.1",
-  "updatedAt": "2017-11-27T08:40:43.271Z"
+  "updatedAt": "2017-11-27T11:30:43.650Z"
 }
