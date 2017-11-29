@@ -88,6 +88,8 @@ App = {
         petTemplate.find('.author').text(result[i].substring(1,10));
         petTemplate.find('.panel-title').text("Article " + i.toString());
         petTemplate.find('img').attr('src', "images/image_2.png");
+        petTemplate.find('.btn-submit').attr('data-id', i.toString());
+        petTemplate.find('.btn-validate').attr('data-id', i.toString());
         petsRow.append(petTemplate.html());
       }
       });
