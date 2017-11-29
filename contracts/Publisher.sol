@@ -34,10 +34,10 @@ contract Publisher{
       return numPublications;
     }
 
-    function validateArticle(uint publicationID) public{
+    function validateArticle(uint publicationID) public returns(uint){
       Publication storage paper = publications[publicationID];
 	    Reviewer storage sender = paper.reviewers[msg.sender];
-      if (sender.voted || paper.author==msg.sender ) return;
+      if (sender.voted || paper.author==msg.sender ) return 0;
 	    paper.reviewers[msg.sender] = Reviewer({addr: msg.sender,voted:true});
       paper.numReviewers++;
 	    paper.validatedVoteCount++;
@@ -45,6 +45,7 @@ contract Publisher{
 	    if(paper.validatedVoteCount>3){
         paper.state = State.validated;
 	    }
+      return 1;
     }
 
     function rejectArticle(uint publicationID) public{

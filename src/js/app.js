@@ -91,11 +91,15 @@ App = {
         petTemplate.find('.btn-submit').attr('data-id', i.toString());
         petTemplate.find('.btn-validate').attr('data-id', i.toString());
         petsRow.append(petTemplate.html());
+
+        App.getNbReviewers(i);
+        App.getStatusArticle(i);
+
+
       }
       });
-      //$('.panel-pet').eq(i).find('button').eq(0).text('Edited').attr('disabled', false);
-      //$('.panel-pet').eq(i).find('button').eq(1).text('Submit').attr('disabled', false);
-		  //$('.panel-pet').eq(i).find('button').eq(2).text('Validate').attr('disabled', false);
+
+
     }).catch(function(err) {
 	     console.log(err.message);
     });
@@ -133,35 +137,79 @@ App = {
       var publisherInstance;
       console.log(articleId);
       web3.eth.getAccounts(function(error, accounts) {
-	  console.log("handleValidate::getAccount");
-	  if (error) {
-	      console.log("handleValidate::getAccount::error");
-	      console.log(error);
-	  }
+	       console.log("handleValidate::getAccount");
+	        if (error) {
+	           console.log("handleValidate::getAccount::error");
+	           console.log(error);
+	        }
 
-    var account = accounts[0];
-    console.log(accounts);
+      var account = accounts[0];
+      console.log(accounts);
 
-    console.log("handleValidate::Publisher.deployed()");
-    App.contracts.Publisher.deployed().then(function(instance) {
-	publisherInstance = instance;
+      console.log("handleValidate::Publisher.deployed()");
+      App.contracts.Publisher.deployed().then(function(instance) {
+	    publisherInstance = instance;
 
-	// Execute adopt as a transaction by sending account
-	console.log("handleValidate::execute le contract de validation");
-	return publisherInstance.validateArticle(articleId);
-    }).then(function(result) {
-	console.log("handleValidate : article validé");
-	console.log(result);
-	return ;
+	     // Execute adopt as a transaction by sending account
+	     console.log("handleValidate::execute le contract de validation");
+	     return publisherInstance.validateArticle(articleId);
+   }).then(function(result) {
+     //on attend un peu le temps de l'execution du contrat
+      setTimeout(function(){App.getNbReviewers(articleId);},5000);
+      setTimeout(function(){App.getStatusArticle(articleId);},5000);
     }).catch(function(err) {
-	console.log(err.message);
+	     console.log(err.message);
     });
 });
 },
 
 
+//HYPO qu'ils sont tous chargés dans le bon ordre
+getNbReviewers: function(articleId){
+  App.contracts.Publisher.deployed().then(function(instance) {
+  publisherInstance = instance;
+  return publisherInstance.getValidatedVoteCount.call(articleId);
+  }).then(function(result) {
+    console.log("UpdateNbReviewers " + articleId + " " + result.toString());
+    $('.panel-pet').eq(articleId).find('.nb-reviewers').text(result.toString());
+  });
+},
+getStatusArticle: function(articleId){
+  App.contracts.Publisher.deployed().then(function(instance) {
+  publisherInstance = instance;
+  return publisherInstance.getStatusArticle.call(articleId);
+  }).then(function(result) {
+    if(result.toString()==0){
+      status = "Submited";
+      App.disableSubmitAction(articleId);
+      App.enableValidateAction(articleId);
+    }
+    else {
+      if(result.toString()==2){
+        status = "Validated";
+        App.disableSubmitAction(articleId);
+        App.enableValidateAction(articleId);
+        //$('.panel-pet').eq(articleId).style.backgroundColor('#dddddd');
+      }
+    }
+    console.log("getStatusArticle " + articleId + " " + status);
+    $('.panel-pet').eq(articleId).find('.status-article').text(status);
+  });
+},
 
-
+enableSubmitAction: function(articleId){
+  $('.panel-pet').eq(articleId).find('button').eq(0).text('Submit').attr('disabled', false);
+},
+disableSubmitAction: function(articleId){
+  $('.panel-pet').eq(articleId).find('button').eq(0).text('Submit').attr('disabled', true);
+},
+enableValidateAction: function(articleId){
+  $('.panel-pet').eq(i).find('button').eq(1).text('Validate').attr('disabled', false);
+},
+disableValidateAction: function(articleId){
+  $('.panel-pet').eq(i).find('button').eq(1).text('Validate').attr('disabled', true);
+},
+//
 handleSubmit: function(event) {
   event.preventDefault();
   console.log("handleSubmit");
