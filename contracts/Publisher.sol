@@ -15,10 +15,8 @@ contract Publisher{
      	State state;
 	    uint validatedVoteCount;
       uint rejectedVoteCount;
-
 	    mapping(address => Reviewer) reviewers;
 	  }
-
 
     uint numPublications;
     mapping(uint => Publication) publications;
