@@ -4,7 +4,7 @@
   "description": "",
   "main": "truffle.js",
   "directories": {
-  "test": "test"
+    "test": "test"
   },
   "scripts": {
     "dev": "lite-server",
@@ -14,5 +14,8 @@
   "license": "ISC",
   "devDependencies": {
     "lite-server": "^2.3.0"
+  },
+  "dependencies": {
+    "ethjs-rpc": "^0.1.7"
   }
 }
