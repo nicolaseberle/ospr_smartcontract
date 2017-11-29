@@ -73,6 +73,6 @@ contract Publisher{
     }
     function getNumberOfReviewers(uint publicationID) public returns(uint){
       Publication storage paper = publications[publicationID];
-      return paper.numReviewers
+      return paper.numReviewers;
     }
 }

@@ -2,12 +2,17 @@ App = {
   web3Provider: null,
   contracts: {},
 
+
   init: function() {
-    // Load pets.
+    var sender = web3.eth.accounts[0];
+    var senderRow = $('#senderRow');
+    var senderTemplate = $('#senderTemplate');
+    senderTemplate.find('.panel-title').text("Current account : " + sender);
+    senderRow.append(senderTemplate.html());
     /*
     $.getJSON('../listArticles.json', function(data) {
-      var petsRow = $('#petsRow');
-      var petTemplate = $('#petTemplate');
+      var petsRow = $('#articlesRow');
+      var petTemplate = $('#articlesTemplate');
 
       for (i = 0; i < data.length; i ++) {
         petTemplate.find('.panel-title').text(data[i].name);
@@ -60,39 +65,63 @@ App = {
     $(document).on('click', '.btn-validate', App.handleValidate);
   },
 
-  markValidated: function(adopters, account) {
+  markValidated: function() {
     var publisherInstance;
+
+    var petsRow = $('#articlesRow');
+    var petTemplate = $('#articlesTemplate');
 
     App.contracts.Publisher.deployed().then(function(instance) {
 	  publisherInstance = instance;
 
-	  return publisherInstance.getNumSubmitedArticles.call();
+    return publisherInstance.getNumSubmitedArticles.call();
   }).then(function(numPublication) {
-
-    var petsRow = $('#petsRow');
-    var petTemplate = $('#petTemplate');
-
-    for (i = 0; i <= numPublication.toString(); i++) {
+    //listAuthor = App.getListAuthorArticle(numPublication);
+    console.log(numPublication.toString());
+    _numPublication = numPublication;
 
 
+    var p2 = App.asyncLoopOrdered(" ", _numPublication).then(function (result) {
 
-
-
-
+      for(i=0;i<_numPublication;i++){
+        console.log(" " + result.toString());
+        petTemplate.find('.author').text(result[i].substring(1,10));
         petTemplate.find('.panel-title').text("Article " + i.toString());
         petTemplate.find('img').attr('src', "images/image_2.png");
         petsRow.append(petTemplate.html());
-
-
-
+      }
+      });
       //$('.panel-pet').eq(i).find('button').eq(0).text('Edited').attr('disabled', false);
       //$('.panel-pet').eq(i).find('button').eq(1).text('Submit').attr('disabled', false);
 		  //$('.panel-pet').eq(i).find('button').eq(2).text('Validate').attr('disabled', false);
-
-	    }
     }).catch(function(err) {
 	     console.log(err.message);
     });
+
+  },
+
+  getAuthorArticle: function(numArticle){
+    return new Promise(function (resolve, reject) {
+     setTimeout(function () {
+         var output = App.contracts.Publisher.deployed().then(function(instance){ return instance.getAuthorArticle.call(numArticle);});
+         resolve(output);
+   });
+ });
+},
+
+   asyncLoopOrdered: function(someInput, times) {
+    var iterations = [];
+    for (var i = 0; i < times; i++) {
+        iterations.push(App.getAuthorArticle(i) );
+    }
+
+    return Promise.all(iterations).then(function(output) {
+        return output; //add the output all at once when all have completed
+    });
+  },
+
+  getNumberOfArticles: function(){
+    return App.contracts.Publisher.deployed().then(function(instance){ return instance.getNumSubmitedArticles.call();});
   },
 
   handleValidate: function(event) {
@@ -121,7 +150,7 @@ App = {
     }).then(function(result) {
 	console.log("handleValidate : article validé");
 	console.log(result);
-	return App.markValidated();
+	return ;
     }).catch(function(err) {
 	console.log(err.message);
     });
