@@ -9,23 +9,7 @@ App = {
     var senderTemplate = $('#senderTemplate');
     senderTemplate.find('.panel-title').text("Current account : " + sender);
     senderRow.append(senderTemplate.html());
-    /*
-    $.getJSON('../listArticles.json', function(data) {
-      var petsRow = $('#articlesRow');
-      var petTemplate = $('#articlesTemplate');
-
-      for (i = 0; i < data.length; i ++) {
-        petTemplate.find('.panel-title').text(data[i].name);
-        petTemplate.find('img').attr('src', data[i].picture);
-        petTemplate.find('.pet-breed').text(data[i].breed);
-        petTemplate.find('.pet-location').text(data[i].location);
-        petTemplate.find('.btn-edited').attr('data-id', data[i].id);
-        petTemplate.find('.btn-submit').attr('data-id', data[i].id);
-        petTemplate.find('.btn-validate').attr('data-id', data[i].id);
-        petsRow.append(petTemplate.html());
-      }
-    });
-    */
+    senderRow.append();
     return App.initWeb3();
   },
 
@@ -61,6 +45,7 @@ App = {
   },
 
   bindEvents: function() {
+    $(document).on('click', '.btn-add', App.handleAddArticle);
     $(document).on('click', '.btn-submite', App.handleSubmit);
     $(document).on('click', '.btn-validate', App.handleValidate);
   },
@@ -70,6 +55,7 @@ App = {
 
     var petsRow = $('#articlesRow');
     var petTemplate = $('#articlesTemplate');
+    var addArticleTemplate = $('#addArticleTemplate');
 
     App.contracts.Publisher.deployed().then(function(instance) {
 	  publisherInstance = instance;
@@ -83,7 +69,9 @@ App = {
 
     var p2 = App.asyncLoopOrdered(" ", _numPublication).then(function (result) {
 
-      for(i=0;i<_numPublication;i++){
+
+
+    for(i=0;i<_numPublication;i++){
         console.log(" " + result.toString());
         petTemplate.find('.author').text(result[i].substring(1,10));
         petTemplate.find('.panel-title').text("Article " + i.toString());
@@ -97,6 +85,11 @@ App = {
 
 
       }
+      petsRow.append(addArticleTemplate.html());
+
+
+
+
       });
 
 
@@ -129,6 +122,30 @@ App = {
   getNumberOfArticles: function(){
     return App.contracts.Publisher.deployed().then(function(instance){ return instance.getNumSubmitedArticles.call();});
   },
+
+  handleAddArticle: function(event){
+    event.preventDefault();
+    console.log("addArticle");
+    var publisherInstance;
+    web3.eth.getAccounts(function(error, accounts) {
+       console.log("handleAddArticle::getAccount");
+        if (error) {
+           console.log("handleAddArticle::getAccount::error");
+           console.log(error);
+        }
+        var account = accounts[0];
+        console.log(accounts);
+
+        console.log("handleAddArticle::Publisher.deployed()");
+        App.contracts.Publisher.deployed().then(function(instance) {
+  	    publisherInstance = instance;
+
+  	     // Execute adopt as a transaction by sending account
+  	     console.log("handleAddArticle::execute le contract de publication");
+  	     return publisherInstance.submitArticle.sendTransaction();
+     });
+   });
+ },
 
   handleValidate: function(event) {
       event.preventDefault();
@@ -189,7 +206,8 @@ getStatusArticle: function(articleId){
         status = "Validated";
         App.disableSubmitAction(articleId);
         App.enableValidateAction(articleId);
-        //$('.panel-pet').eq(articleId).style.backgroundColor('#dddddd');
+        $('.panel-heading').eq(articleId).css('background-color', "green");
+        $('.panel-pet').eq(articleId).css('border-color', "green");
       }
     }
     console.log("getStatusArticle " + articleId + " " + status);
