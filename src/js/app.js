@@ -78,8 +78,8 @@ App = {
         petTemplate.find('.btn-validate').attr('data-id', articleId.toString());
         petsRow.append(petTemplate.html());
 
-        App.getNbReviewers(i);
-        App.getStatusArticle(i);
+        App.getNbReviewers(articleId);
+        App.getStatusArticle(articleId);
       }
       petsRow.append(addArticleTemplate.html());
       });
@@ -133,9 +133,9 @@ App = {
   	     // Execute adopt as a transaction by sending account
   	     console.log("handleCreateArticle::execute le contract de publication");
   	     return publisherInstance.createArticle.sendTransaction();
-     }).then(function(){
-        setTimeout(function(){window.location.reload();},5000);
-       ;});
+     }).then(function(result){
+          setTimeout(function(){  window.location.reload();},3000);
+       });
    });
  },
 
@@ -164,8 +164,8 @@ App = {
 	     return publisherInstance.validateArticle(articleId);
    }).then(function(result) {
      //on attend un peu le temps de l'execution du contrat
-      setTimeout(function(){App.getNbReviewers(articleId);},5000);
-      setTimeout(function(){App.getStatusArticle(articleId);},5000);
+      setTimeout(function(){App.getNbReviewers(articleId);},4000);
+      setTimeout(function(){App.getStatusArticle(articleId);},4000);
     }).catch(function(err) {
 	     console.log(err.message);
     });
