@@ -49,6 +49,23 @@ App = {
     $(document).on('click', '.btn-validate', App.handleValidate);
   },
 
+  addNewArticle: function(articleId,author)
+  {
+    var petTemplate = $('#articlesTemplate');
+    var petsRow = $('#articlesRow');
+
+    petTemplate.find('.author').text(author.substring(1,10));
+    petTemplate.find('.panel-title').text("Article " + articleId.toString());
+    petTemplate.find('img').attr('src', "images/image_2.png");
+    petTemplate.find('.btn-submit').attr('data-id', articleId.toString());
+    petTemplate.find('.btn-validate').attr('data-id', articleId.toString());
+    petsRow.append(petTemplate.html());
+
+    App.getNbReviewers(articleId);
+    App.getStatusArticle(articleId);
+
+  },
+
   initArticles: function() {
     var publisherInstance;
 
