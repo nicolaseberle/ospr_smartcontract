@@ -42,7 +42,7 @@ contract Publisher{
     function validateArticle(uint publicationID) public returns(uint){
       Publication storage paper = publications[publicationID];
 	    Reviewer storage sender = paper.reviewers[msg.sender];
-      if (sender.voted || paper.author==msg.sender ) return 0;
+      require(sender.voted == false && paper.author!=msg.sender );
 	    paper.reviewers[msg.sender] = Reviewer({addr: msg.sender,voted:true});
       paper.numReviewers++;
 	    paper.validatedVoteCount++;

@@ -65,33 +65,24 @@ App = {
     console.log(numPublication.toString());
     _numPublication = numPublication;
 
-
     var p2 = App.asyncLoopOrdered(" ", _numPublication).then(function (result) {
 
+    for(articleId=0;articleId<_numPublication;articleId++){
+        //console.log(" " + result.toString());
 
-
-    for(i=0;i<_numPublication;i++){
-        console.log(" " + result.toString());
-        petTemplate.find('.author').text(result[i].substring(1,10));
-        petTemplate.find('.panel-title').text("Article " + i.toString());
+        var author = result[articleId];
+        petTemplate.find('.author').text(author.substring(1,10));
+        petTemplate.find('.panel-title').text("Article " + articleId.toString());
         petTemplate.find('img').attr('src', "images/image_2.png");
-        petTemplate.find('.btn-submit').attr('data-id', i.toString());
-        petTemplate.find('.btn-validate').attr('data-id', i.toString());
+        petTemplate.find('.btn-submit').attr('data-id', articleId.toString());
+        petTemplate.find('.btn-validate').attr('data-id', articleId.toString());
         petsRow.append(petTemplate.html());
 
         App.getNbReviewers(i);
         App.getStatusArticle(i);
-
-
       }
       petsRow.append(addArticleTemplate.html());
-
-
-
-
       });
-
-
     }).catch(function(err) {
 	     console.log(err.message);
     });
@@ -142,7 +133,9 @@ App = {
   	     // Execute adopt as a transaction by sending account
   	     console.log("handleCreateArticle::execute le contract de publication");
   	     return publisherInstance.createArticle.sendTransaction();
-     });
+     }).then(function(){
+        setTimeout(function(){window.location.reload();},5000);
+       ;});
    });
  },
 
@@ -211,14 +204,16 @@ getStatusArticle: function(articleId){
         status = "Submited";
         App.disableSubmitAction(articleId);
         App.enableValidateAction(articleId);
+        $('.panel-heading').eq(articleId).css('background-color', "#83BEC0");
+        $('.panel-pet').eq(articleId).css('border-color', "#83BEC0");
       }
       else {
         if(result.toString() == State.VALIDATED){
           status = "Validated";
           App.disableSubmitAction(articleId);
           App.enableValidateAction(articleId);
-          $('.panel-heading').eq(articleId).css('background-color', "green");
-          $('.panel-pet').eq(articleId).css('border-color', "green");
+          $('.panel-heading').eq(articleId).css('background-color', "MediumSeaGreen");
+          $('.panel-pet').eq(articleId).css('border-color', "MediumSeaGreen");
         }
         else{
           status = "Null";
@@ -227,6 +222,7 @@ getStatusArticle: function(articleId){
     }
     console.log("getStatusArticle " + articleId + " " + status);
     $('.panel-pet').eq(articleId).find('.status-article').text(status);
+    return status;
   });
 },
 
