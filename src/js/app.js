@@ -2,7 +2,6 @@ App = {
   web3Provider: null,
   contracts: {},
 
-
   init: function() {
     var sender = web3.eth.accounts[0];
     var senderRow = $('#senderRow');
@@ -40,17 +39,17 @@ App = {
 	  App.contracts.Publisher.setProvider(App.web3Provider);
 	  console.log("Set the provider for our contract");
 	  // Use our contract to retrieve and mark the adopted pets
-	  return App.markValidated();});
+	  return App.initArticles();});
     return App.bindEvents();
   },
 
   bindEvents: function() {
-    $(document).on('click', '.btn-add', App.handleAddArticle);
-    $(document).on('click', '.btn-submite', App.handleSubmit);
+    $(document).on('click', '.btn-add', App.handleCreateArticle);
+    $(document).on('click', '.btn-submit', App.handleSubmit);
     $(document).on('click', '.btn-validate', App.handleValidate);
   },
 
-  markValidated: function() {
+  initArticles: function() {
     var publisherInstance;
 
     var petsRow = $('#articlesRow');
@@ -123,26 +122,26 @@ App = {
     return App.contracts.Publisher.deployed().then(function(instance){ return instance.getNumSubmitedArticles.call();});
   },
 
-  handleAddArticle: function(event){
+  handleCreateArticle: function(event){
     event.preventDefault();
-    console.log("addArticle");
+    console.log("handleCreateArticle");
     var publisherInstance;
     web3.eth.getAccounts(function(error, accounts) {
-       console.log("handleAddArticle::getAccount");
+       console.log("handleCreateArticle::getAccount");
         if (error) {
-           console.log("handleAddArticle::getAccount::error");
+           console.log("handleCreateArticle::getAccount::error");
            console.log(error);
         }
         var account = accounts[0];
         console.log(accounts);
 
-        console.log("handleAddArticle::Publisher.deployed()");
+        console.log("handleCreateArticle::Publisher.deployed()");
         App.contracts.Publisher.deployed().then(function(instance) {
   	    publisherInstance = instance;
 
   	     // Execute adopt as a transaction by sending account
-  	     console.log("handleAddArticle::execute le contract de publication");
-  	     return publisherInstance.submitArticle.sendTransaction();
+  	     console.log("handleCreateArticle::execute le contract de publication");
+  	     return publisherInstance.createArticle.sendTransaction();
      });
    });
  },
@@ -180,7 +179,6 @@ App = {
 });
 },
 
-
 //HYPO qu'ils sont tous chargés dans le bon ordre
 getNbReviewers: function(articleId){
   App.contracts.Publisher.deployed().then(function(instance) {
@@ -192,22 +190,39 @@ getNbReviewers: function(articleId){
   });
 },
 getStatusArticle: function(articleId){
+  var State = {
+  EDITED: 0,
+  SUBMITED: 1,
+  PENDING: 2,
+  VALIDATED: 3,
+  };
   App.contracts.Publisher.deployed().then(function(instance) {
   publisherInstance = instance;
   return publisherInstance.getStatusArticle.call(articleId);
   }).then(function(result) {
-    if(result.toString()==0){
-      status = "Submited";
-      App.disableSubmitAction(articleId);
-      App.enableValidateAction(articleId);
+    if(result.toString()==State.EDITED){
+      status = "Draft";
+      App.enableSubmitAction(articleId);
+      App.disableValidateAction(articleId);
     }
-    else {
-      if(result.toString()==2){
-        status = "Validated";
+    else{
+      if(result.toString() == State.SUBMITED)
+      {
+        status = "Submited";
         App.disableSubmitAction(articleId);
         App.enableValidateAction(articleId);
-        $('.panel-heading').eq(articleId).css('background-color', "green");
-        $('.panel-pet').eq(articleId).css('border-color', "green");
+      }
+      else {
+        if(result.toString() == State.VALIDATED){
+          status = "Validated";
+          App.disableSubmitAction(articleId);
+          App.enableValidateAction(articleId);
+          $('.panel-heading').eq(articleId).css('background-color', "green");
+          $('.panel-pet').eq(articleId).css('border-color', "green");
+        }
+        else{
+          status = "Null";
+        }
       }
     }
     console.log("getStatusArticle " + articleId + " " + status);
@@ -222,10 +237,10 @@ disableSubmitAction: function(articleId){
   $('.panel-pet').eq(articleId).find('button').eq(0).text('Submit').attr('disabled', true);
 },
 enableValidateAction: function(articleId){
-  $('.panel-pet').eq(i).find('button').eq(1).text('Validate').attr('disabled', false);
+  $('.panel-pet').eq(articleId).find('button').eq(1).text('Validate').attr('disabled', false);
 },
 disableValidateAction: function(articleId){
-  $('.panel-pet').eq(i).find('button').eq(1).text('Validate').attr('disabled', true);
+  $('.panel-pet').eq(articleId).find('button').eq(1).text('Validate').attr('disabled', true);
 },
 //
 handleSubmit: function(event) {
@@ -250,11 +265,11 @@ handleSubmit: function(event) {
 
   // Execute adopt as a transaction by sending account
   console.log("handleSubmit::execute le contract de validation");
-  return publisherInstance.submitArticle();
+  return publisherInstance.submitArticle(articleId);
   }).then(function(result) {
     console.log("handleSubmit : article soumis");
     console.log(result);
-    return App.markValidated();
+    setTimeout(function(){App.getStatusArticle(articleId);},5000);
     }).catch(function(err) {
         console.log(err.message);
       });

@@ -1,7 +1,7 @@
 pragma solidity ^0.4.0;
 contract Publisher{
 
-    enum State {submited, pending, validated}
+    enum State {edited,submited,pending, validated}
 
     struct Reviewer {
     	address addr;
@@ -22,10 +22,17 @@ contract Publisher{
     mapping(uint => Publication) publications;
 
     /// Create a new publication with hashcontent of the document.
-    function submitArticle() public returns(uint publicationID){
+    function createArticle() public returns(uint publicationID){
       publicationID = numPublications ++;
-      publications[publicationID] = Publication(msg.sender,now,0,State.submited,0,0 );
+      publications[publicationID] = Publication(msg.sender,now,0,State.edited,0,0 );
       return publicationID;
+    }
+
+
+    function submitArticle(uint publicationID) public{
+      Publication storage paper = publications[publicationID];
+      require(paper.author==msg.sender);
+      paper.state = State.submited;
     }
 
     function getNumSubmitedArticles() public constant returns(uint){
