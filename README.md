@@ -97,7 +97,7 @@ truffle console
 ---
 
 ## Screenshot
-![ScreenShot](https://github.com/nicolaseberle/ospr_smartcontract/edit/dev/screenshot_01.png)
+![image](https://github.com/nicolaseberle/ospr_smartcontract/edit/dev/screenshot_01.png)
 
 ## Troubles ?
 
