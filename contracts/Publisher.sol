@@ -40,7 +40,7 @@ contract Publisher{
       paper.numReviewers++;
 	    paper.validatedVoteCount++;
 
-	    if(paper.validatedVoteCount>3){
+	    if(paper.validatedVoteCount>=3){
         paper.state = State.validated;
 	    }
       return 1;
